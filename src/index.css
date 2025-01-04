@@ -1,11 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
-  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Inter", system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.6;
   font-size: 16px;
-  --primary-color: #1e40af; /* Blue */
-  --secondary-color: #64748b; /* Gray */
-  --background-color: #f9fafb; /* Light background */
-  --text-color: #1f2937; /* Dark text */
+  --primary-color: #1e40af;
+  /* Blue */
+  --secondary-color: #64748b;
+  /* Gray */
+  --background-color: #f9fafb;
+  /* Light background */
+  --text-color: #1f2937;
+  /* Dark text */
 }
 
 body {

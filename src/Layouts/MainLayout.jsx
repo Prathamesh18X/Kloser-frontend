@@ -11,7 +11,7 @@ const MainLayout = ({ children }) => {
       <Footer />
     </div>
   );
-};
+};    
 
 MainLayout.propTypes = {
   children: PropTypes.node.isRequired,
