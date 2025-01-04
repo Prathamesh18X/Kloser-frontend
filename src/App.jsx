@@ -1,24 +1,20 @@
-// import { useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
-import "./App.css";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import MainLayout from "./Layouts/MainLayout";
+import Homepage from "./Pages/Homepage";
+import Cartpage from "./Pages/Cartpage";
 
-function App() {
-  // const [count, setCount] = useState(0)
-
+const App = () => {
   return (
-    <>
-      <div>
-        <h1>
-          Hi.. there We are here to Prepare .
-          ds
-          <span style={{ color: "green" }}> kloser </span>
-        </h1>
-
-        <h4>(welcome to the project)</h4>
-      </div>
-    </>
+    <Router>
+      <MainLayout>
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/cart" element={<Cartpage />} />
+        </Routes>
+      </MainLayout>
+    </Router>
   );
-}
+};
 
 export default App;
