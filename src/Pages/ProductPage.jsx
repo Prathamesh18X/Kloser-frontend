@@ -1,20 +1,9 @@
-import { useState, useContext } from "react";
-import {
-  Card,
-  CardHeader,
-  CardFooter,
-  Image,
-  Button,
-  Dropdown,
-  DropdownTrigger,
-  DropdownMenu,
-  DropdownItem,
-} from "@nextui-org/react";
+import { useContext } from "react";
+import { Card, CardHeader, CardFooter, Image, Button } from "@nextui-org/react";
 import Carousel from "react-material-ui-carousel";
 
 import Masonry from "@mui/lab/Masonry";
 import star from "../../public/assets/star.svg";
-import KeyboardArrowDownRoundedIcon from "@mui/icons-material/KeyboardArrowDownRounded";
 import {
   cardData,
   carouselItems,
@@ -23,17 +12,8 @@ import {
 
 import { MobileContext } from "../Context/MobileContext";
 
-const Homepage = () => {
+const ProductPage = () => {
   const isMobile = useContext(MobileContext);
-  const [selectedCategory, setSelectedCategory] = useState("All Category");
-  const [selectedSort, setSelectedSort] = useState("Price low to high");
-
-  const categories = ["All Category", "Electronics", "Fashion", "Beauty"];
-  const sortingOptions = [
-    "Price low to high",
-    "Price high to low",
-    "Newest Arrivals",
-  ];
   return (
     <>
       <div className=" mx-auto py-6 text-center">
@@ -162,57 +142,6 @@ const Homepage = () => {
           </Card>
         </div>
       </div>
-      <div className="flex justify-between items-center mx-6 my-4">
-        <div className="relative">
-          <Dropdown>
-            <DropdownTrigger>
-              <Button
-                variant={"bordered"}
-                bordered
-                className="text-gray-600 border-gray-300"
-              >
-                {selectedCategory}
-                <KeyboardArrowDownRoundedIcon className=" text-gray-500" />
-              </Button>
-            </DropdownTrigger>
-            <DropdownMenu
-              variant="bordered"
-              aria-label="Category Options"
-              onAction={(key) => setSelectedCategory(key)}
-              selectedKeys={[selectedCategory]}
-            >
-              {categories.map((category, index) => (
-                <DropdownItem key={index}>{category}</DropdownItem>
-              ))}
-            </DropdownMenu>
-          </Dropdown>
-        </div>
-
-        <div className="relative">
-          <Dropdown>
-            <DropdownTrigger>
-              <Button
-                variant={"bordered"}
-                bordered
-                className="text-gray-600 border-gray-300"
-              >
-                {selectedSort}
-                <KeyboardArrowDownRoundedIcon className=" text-gray-500" />
-              </Button>
-            </DropdownTrigger>
-            <DropdownMenu
-              variant="bordered"
-              aria-label="Sorting Options"
-              onAction={(key) => setSelectedSort(key)}
-              selectedKeys={[selectedSort]}
-            >
-              {sortingOptions.map((option, index) => (
-                <DropdownItem key={index}>{option}</DropdownItem>
-              ))}
-            </DropdownMenu>
-          </Dropdown>
-        </div>
-      </div>
       <Masonry
         columns={breakpointColumnsObj}
         spacing={isMobile ? 2 : 4}
@@ -265,4 +194,4 @@ const Homepage = () => {
   );
 };
 
-export default Homepage;
+export default ProductPage;
