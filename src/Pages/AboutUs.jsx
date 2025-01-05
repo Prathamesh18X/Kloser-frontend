@@ -87,12 +87,11 @@ const AboutUs = () => {
               e-commerce experience.
             </p>
             <a
-  href="#"
-  className="inline-block mt-4 text-black-600 font-semibold underline hover:no-underline hover:text-blue-800 transition duration-200"
->
-  Start Exploring Kloser
-</a>
-
+              href="#"
+              className="inline-block mt-4 text-black-600 font-semibold underline hover:no-underline hover:text-blue-800 transition duration-200"
+            >
+              Start Exploring Kloser
+            </a>
           </div>
         </div>
       </div>
