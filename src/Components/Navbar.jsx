@@ -7,6 +7,7 @@ import cart from "../../public/assets/cart.svg";
 import fullLogo from "../../public/assets/kloserFullLogo.svg";
 import halfLogo from "../../public/assets/kLogo.svg";
 import { MobileContext } from "../Context/MobileContext";
+import { trendingTags } from "../Constants/APIsData";
 
 const Navbar = () => {
   const isMobile = useContext(MobileContext);
@@ -19,23 +20,7 @@ const Navbar = () => {
     "iPhone charger",
     "Type C cable",
   ]);
-  const trendingTags = [
-    {
-      title: "Gentle Cleanser",
-      image:
-        "https://plus.unsplash.com/premium_photo-1719289799376-d3de0ca4ddbc?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    },
-    {
-      title: "Water Bottle",
-      image:
-        "https://images.unsplash.com/photo-1564020426549-fabfb8c467ad?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    },
-    {
-      title: "Fragrance",
-      image:
-        "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?q=80&w=1888&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    },
-  ];
+
   // Handlers
   const handleSearchChange = (e) => {
     setSearchText(e.target.value);
