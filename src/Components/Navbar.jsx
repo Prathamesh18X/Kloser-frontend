@@ -1,6 +1,6 @@
-import { useContext } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
-import { Input, Button } from "@nextui-org/react";
+import { Input, Button, Chip } from "@nextui-org/react";
 import sun from "../../public/assets/sun.svg";
 import moon from "../../public/assets/moon.svg";
 import cart from "../../public/assets/cart.svg";
@@ -11,6 +11,45 @@ import { MobileContext } from "../Context/MobileContext";
 const Navbar = () => {
   const isMobile = useContext(MobileContext);
 
+  const [searchText, setSearchText] = useState("");
+  const [showDropdown, setShowDropdown] = useState(false);
+
+  // Example Data
+  const [recentSearches, setRecentSearches] = useState([
+    "iPhone charger",
+    "Type C cable",
+  ]);
+  const trendingTags = [
+    {
+      title: "Gentle Cleanser",
+      image:
+        "https://plus.unsplash.com/premium_photo-1719289799376-d3de0ca4ddbc?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+    {
+      title: "Water Bottle",
+      image:
+        "https://images.unsplash.com/photo-1564020426549-fabfb8c467ad?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+    {
+      title: "Fragrance",
+      image:
+        "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?q=80&w=1888&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+  ];
+  // Handlers
+  const handleSearchChange = (e) => {
+    setSearchText(e.target.value);
+    setShowDropdown(true);
+  };
+
+  const handleClearSearches = () => {
+    setRecentSearches([]);
+  };
+
+  const handleSelectSearch = (search) => {
+    setSearchText(search);
+    setShowDropdown(false);
+  };
   // const [darkMode, setDarkMode] = useState(false);
 
   // const enableLightMode = () => {
@@ -67,15 +106,81 @@ const Navbar = () => {
           )}
         </div>
 
-        <div className="flex-grow mx-4 max-w-lg">
+        <div className="relative w-full max-w-lg mx-auto">
           <Input
             clearable
-            color="default"
-            placeholder="Search product..."
+            value={searchText}
+            onChange={handleSearchChange}
+            placeholder={`${
+              showDropdown ? "Start typing" : "Search product..."
+            }`}
+            onFocus={() => setShowDropdown(true)}
+            onBlur={() => setTimeout(() => setShowDropdown(false), 200)}
             className="w-full text-black focus:bg-gray-200 focus:outline-none rounded-lg"
-            // variant={`${darkMode ? "bordered" : "light"}`}
             size="lg"
           />
+          {showDropdown && (
+            <div className="absolute w-full mt-2 bg-white border shadow-lg rounded-lg z-50">
+              {/* Recent Searches Section */}
+              <div className="px-4 py-2">
+                <div className="flex justify-between items-center">
+                  <h4 className="text-sm font-bold text-gray-700">
+                    Recent Searches
+                  </h4>
+                  <Button
+                    auto
+                    light
+                    color="white"
+                    onClick={handleClearSearches}
+                    size="sm"
+                    className=" text-gray-600 hover:underline"
+                  >
+                    Clear
+                  </Button>
+                </div>
+                <div className="flex flex-wrap mt-2 gap-2">
+                  {recentSearches.map((search, index) => (
+                    <Chip
+                      key={index}
+                      className={{
+                        closeButton: "bg-gray-600 ",
+                      }}
+                      onClick={() => handleSelectSearch(search)}
+                      onClose={() => handleSelectSearch(search)}
+                    >
+                      <span className=" text-gray-600 text-sm">{search}</span>{" "}
+                      {/* <span>
+                        <CloseRoundedIcon className="text-gray-600" />
+                      </span> */}
+                    </Chip>
+                  ))}
+                </div>
+              </div>
+
+              {/* Trending Tags Section */}
+              <div className="px-4 py-2 border-t">
+                <h4 className="text-sm font-bold text-gray-700">Trending</h4>
+                <div className="flex flex-wrap mt-2 gap-4">
+                  {trendingTags.map((tag, index) => (
+                    <div
+                      key={index}
+                      className="flex  items-center justify-center w-[full] p-1 border rounded-lg cursor-pointer hover:shadow-lg"
+                      onClick={() => handleSelectSearch(tag.title)}
+                    >
+                      <img
+                        src={tag.image}
+                        alt={tag.title}
+                        className="w-12 h-12 rounded-[10%] object-cover mb-1"
+                      />
+                      <span className="text-xs text-gray-700 font-medium px-2">
+                        {tag.title}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
         </div>
 
         {!isMobile && (
