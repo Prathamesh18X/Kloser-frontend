@@ -3,6 +3,9 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import MainLayout from "./Layouts/MainLayout";
 import Homepage from "./Pages/Homepage";
 import Cartpage from "./Pages/Cartpage";
+import BlankPage from "./Pages/BlankPage";
+import ReturnPolicy from "./Pages/ReturnPolicy";
+import AboutUs from "./Pages/AboutUs";
 
 const App = () => {
   return (
@@ -11,6 +14,10 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/cart" element={<Cartpage />} />
+          <Route path="/blankpage" element={<BlankPage />} />
+          <Route path="/returnpolicy" element={<ReturnPolicy />} />
+          <Route path="/aboutus" element={<AboutUs />} />
+          
         </Routes>
       </MainLayout>
     </Router>
