@@ -1,16 +1,19 @@
-const breakpointColumnsObj = { xs: 1, sm: 2, md: 4, lg: 5 };
+const breakpointColumnsObj = { xs: 2, sm: 3, md: 4, lg: 5 };
 const carouselItems = [
   {
     title: "Step Into the world of Japanese Wellness & Beauty",
-    image: "https://via.placeholder.com/800x400?text=Slide+1",
+    image:
+      "https://plus.unsplash.com/premium_photo-1733514433512-02a7b68e92dc?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     title: "Discover the Beauty of Nature",
-    image: "https://via.placeholder.com/800x400?text=Slide+2",
+    image:
+      "https://images.unsplash.com/photo-1734375315815-77169cefe3d0?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     title: "Explore Exclusive Collections",
-    image: "https://via.placeholder.com/800x400?text=Slide+3",
+    image:
+      "https://plus.unsplash.com/premium_photo-1733514433512-02a7b68e92dc?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
 ];
 const cardData = [

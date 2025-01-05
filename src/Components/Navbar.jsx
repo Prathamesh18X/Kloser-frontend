@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { Input, Button } from "@nextui-org/react";
 import sun from "../../public/assets/sun.svg";
@@ -6,21 +6,12 @@ import moon from "../../public/assets/moon.svg";
 import cart from "../../public/assets/cart.svg";
 import fullLogo from "../../public/assets/kloserFullLogo.svg";
 import halfLogo from "../../public/assets/kLogo.svg";
-import { SCREEN_SIZES } from "../styles/globals";
+import { MobileContext } from "../Context/MobileContext";
 
 const Navbar = () => {
-  // const [darkMode, setDarkMode] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
+  const isMobile = useContext(MobileContext);
 
-  // Check screen width on window resize
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= SCREEN_SIZES.MOBILE);
-    };
-    handleResize(); // Initial check
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  // const [darkMode, setDarkMode] = useState(false);
 
   // const enableLightMode = () => {
   //   setDarkMode(false);
@@ -80,7 +71,7 @@ const Navbar = () => {
           <Input
             clearable
             color="default"
-            placeholder="Search products..."
+            placeholder="Search product..."
             className="w-full text-black focus:bg-gray-200 focus:outline-none rounded-lg"
             // variant={`${darkMode ? "bordered" : "light"}`}
             size="lg"

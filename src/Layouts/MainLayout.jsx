@@ -1,4 +1,3 @@
-import React from "react";
 import PropTypes from "prop-types"; // Import prop-types
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
@@ -11,7 +10,7 @@ const MainLayout = ({ children }) => {
       <Footer />
     </div>
   );
-};    
+};
 
 MainLayout.propTypes = {
   children: PropTypes.node.isRequired,
