@@ -14,7 +14,6 @@ import { MobileContext } from "../Context/MobileContext";
 
 const Homepage = () => {
   const isMobile = useContext(MobileContext);
-  console.log("isMobile:", isMobile);
   return (
     <>
       <div className=" mx-auto py-6 text-center">
