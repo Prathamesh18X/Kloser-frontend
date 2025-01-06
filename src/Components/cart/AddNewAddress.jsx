@@ -70,55 +70,47 @@ const AddNewAddress = ({ totalAmount }) => {
 
         {/* Checkbox */}
         <div className="flex items-start mt-6">
-  <input
-    id="keep-posted"
-    type="checkbox"
-    className="w-4 h-4 text-black border-gray-300 rounded focus:ring-black"
-  />
-  <label
-    htmlFor="keep-posted"
-    className="ml-3 font-inter text-[14px] font-medium leading-[19.6px] tracking-[-0.2px] text-right"
-    style={{
-      color: "#78716C",
-    }}
-  >
-    Keep me posted about offers and new collections
-  </label>
-</div>
-
+          <input id="keep-posted" type="checkbox" className="w-4 h-4 text-black border-gray-300 rounded focus:ring-black" />
+          <label
+            htmlFor="keep-posted"
+            className="ml-3 font-inter text-[14px] font-medium leading-[19.6px] tracking-[-0.2px] text-right"
+            style={{
+              color: "#78716C",
+            }}
+          >
+            Keep me posted about offers and new collections
+          </label>
+        </div>
       </div>
 
       {/* Footer */}
       <div
-  className="px-6 py-6 text-center font-inter text-[14px] font-medium leading-[19.6px] tracking-[-0.2px]"
-  style={{
-    color: "#78716C",
-    textUnderlinePosition: "from-font",
-    textDecorationSkipInk: "none",
-  }}
->
-  By proceeding, I accept the{" "}
-  <a
-    href="#"
-   
-    style={{
-      color: "#78716C",
-    }}
-  >
-    T&C
-  </a>{" "}
-  and{" "}
-  <a
-    href="#"
-   
-    style={{
-      color: "#78716C",
-    }}
-  >
-    Privacy Policy
-  </a>
-</div>
-
+        className="px-6 py-6 text-center font-inter text-[14px] font-medium leading-[19.6px] tracking-[-0.2px]"
+        style={{
+          color: "#78716C",
+          textUnderlinePosition: "from-font",
+          textDecorationSkipInk: "none",
+        }}
+      >
+        By proceeding, I accept the{" "}
+        <a
+          href="#"
+          style={{
+            color: "#78716C",
+          }}
+        >
+          T&C
+        </a>{" "}
+        and{" "}
+        <a
+          href="#"
+          style={{
+            color: "#78716C",
+          }}
+        >
+          Privacy Policy
+        </a>
+      </div>
     </div>
   );
 };

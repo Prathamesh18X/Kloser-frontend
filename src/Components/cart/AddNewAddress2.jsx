@@ -14,7 +14,7 @@ const AddNewAddress2 = ({ totalAmount }) => {
 <path d="M18.6668 14H9.3335" stroke="#78716C" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M14.0002 18.6666L9.3335 14L14.0002 9.33331" stroke="#78716C" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
-dsdsa
+
 </button>
         <h2 className="text-base font-medium text-gray-800">Add new address</h2>
         <div className="text-gray-800 text-sm font-medium">
