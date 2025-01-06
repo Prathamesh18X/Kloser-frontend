@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 
@@ -9,7 +9,13 @@ const AddNewAddress2 = ({ totalAmount }) => {
     <div className="w-[400px] h-screen bg-white shadow-lg fixed top-0 right-0 z-50 overflow-y-auto">
       {/* Header */}
       <div className="flex justify-between items-center px-6 py-4 border-b border-gray-200">
-        <button className="text-gray-600 text-xl">&larr;</button>
+        <button className="text-gray-600 text-xl"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="28" height="28" rx="8" fill="#E7E5E4"/>
+<path d="M18.6668 14H9.3335" stroke="#78716C" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M14.0002 18.6666L9.3335 14L14.0002 9.33331" stroke="#78716C" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+dsdsa
+</button>
         <h2 className="text-base font-medium text-gray-800">Add new address</h2>
         <div className="text-gray-800 text-sm font-medium">
           Order Total: <span className="font-semibold">RM{totalAmount}</span>

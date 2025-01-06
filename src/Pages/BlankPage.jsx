@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+
 import ShoppingSummary from '../Components/cart/ShoppingSummary'
 import AddNewAddress from '../Components/cart/AddNewAddress'
 import AddNewAddress2 from '../Components/cart/AddNewAddress2'
@@ -61,7 +61,7 @@ const App = () => {
         onCheckout={() => alert("Proceeding to checkout")}
       /> */}
       {/* <AddNewAddress totalAmount="598.60" /> */}
-      {/* <VerifyNumber totalAmount="598.60" phoneNumber="601234123410" /> */}
+      <VerifyNumber totalAmount="598.60" phoneNumber="601234123410" />
       {/* <AddNewAddress2/>  */}
        {/* <Checkout totalAmount="598.60" deliveryDetails={deliveryDetails} /> */}
       {/* <DeliverySelection

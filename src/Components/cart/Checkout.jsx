@@ -1,4 +1,4 @@
-import React from "react";
+
 import { FaLocationDot } from "react-icons/fa6"; // Delivery icon
 import { MdOutlineArrowForwardIos } from "react-icons/md"; // Forward arrow
 import { TbTruckDelivery } from "react-icons/tb"; // Shipping icon

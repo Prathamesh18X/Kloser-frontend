@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import  { useState, useEffect } from "react";
 
 const PaymentQRCode = ({ qrCodeUrl, onCancelTransaction }) => {
   const [timeLeft, setTimeLeft] = useState(300); // 5 minutes in seconds
