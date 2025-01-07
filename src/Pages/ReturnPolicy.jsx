@@ -14,7 +14,7 @@ const ReturnPolicy = () => {
 
         <div className='flex justify-center mb-10'>
           <img
-            src='https://via.placeholder.com/1400x600' // Adjusted for a larger image
+            src='https://via.placeholder.com/1400x600'
             alt='Warehouse'
             className='w-full rounded-lg shadow-lg'
           />

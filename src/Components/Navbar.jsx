@@ -15,13 +15,11 @@ const Navbar = () => {
   const [searchText, setSearchText] = useState('');
   const [showDropdown, setShowDropdown] = useState(false);
 
-  // Example Data
   const [recentSearches, setRecentSearches] = useState([
     'iPhone charger',
     'Type C cable',
   ]);
 
-  // Handlers
   const handleSearchChange = (e) => {
     setSearchText(e.target.value);
     setShowDropdown(true);

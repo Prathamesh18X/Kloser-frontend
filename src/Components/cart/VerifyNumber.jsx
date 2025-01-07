@@ -43,7 +43,6 @@ const VerifyNumber = ({ totalAmount, phoneNumber, onNext }) => {
 
   return (
     <div className='w-[460px] h-screen bg-default shadow-lg fixed top-0 right-0 z-50 flex flex-col justify-between'>
-      {/* Header */}
       <div className='flex justify-between items-center px-6 py-4 '>
         <div className='flex items-center'>
           <button className='text-gray-600 text-xl'>
@@ -82,9 +81,7 @@ const VerifyNumber = ({ totalAmount, phoneNumber, onNext }) => {
         </div>
       </div>
 
-      {/* Content */}
       <div className='flex-1 flex flex-col justify-center px-6'>
-        {/* OTP Message */}
         <div className='flex justify-center items-center text-[14px] font-medium text-[#1C1917]  '>
           <p>
             Enter OTP sent to{' '}
@@ -123,7 +120,6 @@ const VerifyNumber = ({ totalAmount, phoneNumber, onNext }) => {
           </button>
         </div>
 
-        {/* OTP Input */}
         <div className='flex justify-center gap-3 mt-4'>
           {otp.map((value, index) => (
             <input
@@ -138,12 +134,10 @@ const VerifyNumber = ({ totalAmount, phoneNumber, onNext }) => {
           ))}
         </div>
 
-        {/* Error Message */}
         <p className='text-[14px] font-medium text-[#78716C] mt-4 text-center'>
           Please enter the correct OTP to fetch saved addresses
         </p>
 
-        {/* Checkbox */}
         <div className='flex justify-center items-center mt-4'>
           <input
             id='keep-logged-in'
@@ -158,7 +152,6 @@ const VerifyNumber = ({ totalAmount, phoneNumber, onNext }) => {
           </label>
         </div>
 
-        {/* Resend OTP */}
         <div className='mt-4 text-center'>
           <button
             disabled={resendDisabled}
@@ -172,7 +165,6 @@ const VerifyNumber = ({ totalAmount, phoneNumber, onNext }) => {
         </div>
       </div>
 
-      {/* Footer */}
       <div className='px-6 py-6  text-center text-sm text-gray-500'>
         By proceeding, I accept the{' '}
         <a href='#' className='underline'>

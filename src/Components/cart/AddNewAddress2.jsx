@@ -1,4 +1,3 @@
-// AddNewAddress2.jsx
 import { useState } from 'react';
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
@@ -11,7 +10,7 @@ const AddNewAddress2 = ({ onNext }) => {
   const [postcode, setPostcode] = useState('');
   const [city, setCity] = useState('');
   const [state, setState] = useState('');
-  const [addressType, setAddressType] = useState(''); // Default value could be 'Home', 'Work', or 'Other'
+  const [addressType, setAddressType] = useState('');
 
   const validateFields = () => {
     const errors = [];
@@ -48,7 +47,6 @@ const AddNewAddress2 = ({ onNext }) => {
       return false;
     }
 
-    // Optional: Add more sophisticated validations (e.g., email format)
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
       alert('Please enter a valid Email address.');
@@ -70,18 +68,16 @@ const AddNewAddress2 = ({ onNext }) => {
         state,
         addressType,
       });
-      onNext(); // Proceed to the next step
+      onNext();
     }
   };
 
   return (
     <div className='w-[460px] h-screen bg-default shadow-lg fixed top-16 right-0 z-50 overflow-y-auto'>
-      {/* Header */}
       <div className='flex justify-between items-center px-6 py-4 border-b border-gray-200'>
         <h2 className='text-base font-medium text-gray-800'>Add new address</h2>
       </div>
 
-      {/* Content */}
       <div className='px-6 py-6 space-y-4'>
         <label className='block text-sm font-medium text-gray-800'>
           Phone number
@@ -187,7 +183,6 @@ const AddNewAddress2 = ({ onNext }) => {
         </div>
       </div>
 
-      {/* Save Button */}
       <div className='px-6 py-6 border-t border-gray-200'>
         <button
           onClick={handleSaveAndContinue}

@@ -156,21 +156,18 @@ const YouMightLikeItem = ({ item }) => {
 const ShoppingSummary = ({ items, total, onCheckout }) => {
   return (
     <div className='w-[460px] h-screen bg-white shadow-lg fixed top-0 right-0 z-50 overflow-y-auto'>
-      {/* Header */}
       <div className='p-6 border-gray-200'>
         <h2 className='text-left text-gray-600 font-inter font-medium text-[16px] leading-[22.4px] md:text-[18px] md:leading-[25.2px]'>
           Shopping Summary
         </h2>
       </div>
 
-      {/* Items */}
       <div className='px-6'>
         {items.map((item, index) => (
           <ShoppingCartItem key={index} item={item} />
         ))}
       </div>
 
-      {/* Continue Shopping */}
       <div className='px-6 mt-4 '>
         <a
           href='#'
@@ -180,7 +177,6 @@ const ShoppingSummary = ({ items, total, onCheckout }) => {
         </a>
       </div>
 
-      {/* You Might Also Like */}
       <div className='px-6 mt-6'>
         <h3 className='text-sm font-medium text-gray-600 mb-4'>
           You might also like
@@ -194,7 +190,6 @@ const ShoppingSummary = ({ items, total, onCheckout }) => {
         </Swiper>
       </div>
 
-      {/* Checkout */}
       <div className='px-6 py-6 mt-6 border-t border-gray-200'>
         <div className='flex justify-between text-sm font-medium text-gray-900'>
           <span>Subtotal</span>

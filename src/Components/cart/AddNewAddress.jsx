@@ -56,9 +56,7 @@ const AddNewAddress = ({ totalAmount, onNext }) => {
         </div>
       </div>
 
-      {/* Main Content */}
       <div className='flex flex-col justify-center px-6 py-6 h-[calc(100vh-144px)]'>
-        {/* Phone Number Label */}
         <label
           htmlFor='phone-number'
           className='block text-sm font-medium text-gray-800 mb-2'
@@ -82,7 +80,6 @@ const AddNewAddress = ({ totalAmount, onNext }) => {
           </p>
         )}
 
-        {/* Add New Address Button */}
         <button
           className='w-full h-[48px] mt-4 border border-gray-300 rounded-lg text-sm font-medium text-gray-800 hover:bg-gray-100'
           onClick={validatePhoneNumber}
@@ -90,7 +87,6 @@ const AddNewAddress = ({ totalAmount, onNext }) => {
           + Add new address
         </button>
 
-        {/* Checkbox */}
         <div className='flex items-start mt-6'>
           <input
             id='keep-posted'
@@ -109,7 +105,6 @@ const AddNewAddress = ({ totalAmount, onNext }) => {
         </div>
       </div>
 
-      {/* Footer */}
       <div
         className='px-6 py-6 text-center font-inter text-[14px] font-medium leading-[19.6px] tracking-[-0.2px]'
         style={{

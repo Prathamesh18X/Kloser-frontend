@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
 const PaymentQRCode = ({ qrCodeUrl, onCancelTransaction }) => {
-  const [timeLeft, setTimeLeft] = useState(300); // 5 minutes in seconds
+  const [timeLeft, setTimeLeft] = useState(300);
 
   useEffect(() => {
     if (timeLeft > 0) {
@@ -20,7 +20,6 @@ const PaymentQRCode = ({ qrCodeUrl, onCancelTransaction }) => {
 
   return (
     <div className='w-[460px] h-screen bg-default shadow-lg fixed top-0 right-0 z-50 overflow-y-auto flex flex-col items-center justify-between'>
-      {/* Header */}
       <div className='text-center px-6 pt-8 mt-8 flex flex-col items-center justify-center'>
         <h2 className='text-[18px] font-medium leading-[25.2px] text-[#1C1917]'>
           Pay Securely with DuitNow QR
@@ -35,7 +34,6 @@ const PaymentQRCode = ({ qrCodeUrl, onCancelTransaction }) => {
           Expires in {formatTime(timeLeft)}
         </p>
 
-        {/* QR Code */}
         <div className='flex flex-col justify-center items-center mb-6 mt-4'>
           <img
             src={qrCodeUrl}
@@ -48,7 +46,6 @@ const PaymentQRCode = ({ qrCodeUrl, onCancelTransaction }) => {
         </div>
       </div>
 
-      {/* Cancel Button */}
       <div className='w-full px-6 py-6 '>
         <button
           onClick={onCancelTransaction}

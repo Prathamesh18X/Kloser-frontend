@@ -1,7 +1,6 @@
-// Checkout.jsx
-import { FaLocationDot } from 'react-icons/fa6'; // Delivery icon
-import { MdOutlineArrowForwardIos } from 'react-icons/md'; // Forward arrow
-import { TbTruckDelivery } from 'react-icons/tb'; // Shipping icon
+import { FaLocationDot } from 'react-icons/fa6';
+import { MdOutlineArrowForwardIos } from 'react-icons/md';
+import { TbTruckDelivery } from 'react-icons/tb';
 
 const Checkout = ({
   totalAmount,
@@ -44,9 +43,7 @@ const Checkout = ({
         </div>
       </div>
 
-      {/* Scrollable Content */}
       <div className='flex-1 px-6 py-4 space-y-3 overflow-y-auto'>
-        {/* Delivery Information */}
         <div className='border border-gray-200 rounded-lg p-4 shadow-sm flex justify-between items-start'>
           <div className='flex items-start space-x-3'>
             <FaLocationDot className='text-xl text-gray-600' />
@@ -71,7 +68,6 @@ const Checkout = ({
           </button>
         </div>
 
-        {/* Shipping Information */}
         <div className='flex justify-between items-center border border-gray-300 rounded-lg px-4 py-2'>
           <div className='flex items-center space-x-2'>
             <TbTruckDelivery className='text-gray-600' />
@@ -88,7 +84,6 @@ const Checkout = ({
         </div>
       </div>
 
-      {/* Payment Button */}
       <div className='px-6 py-6'>
         <button
           onClick={onPayWith}
