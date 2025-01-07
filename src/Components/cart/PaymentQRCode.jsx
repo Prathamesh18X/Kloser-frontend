@@ -19,7 +19,7 @@ const PaymentQRCode = ({ qrCodeUrl, onCancelTransaction }) => {
   };
 
   return (
-    <div className='w-[400px] h-screen bg-white shadow-lg fixed top-0 right-0 z-50 overflow-y-auto flex flex-col items-center justify-between'>
+    <div className='w-[460px] h-screen bg-default shadow-lg fixed top-0 right-0 z-50 overflow-y-auto flex flex-col items-center justify-between'>
       {/* Header */}
       <div className='text-center px-6 pt-8 mt-8 flex flex-col items-center justify-center'>
         <h2 className='text-[18px] font-medium leading-[25.2px] text-[#1C1917]'>

@@ -1,12 +1,12 @@
-import PropTypes from "prop-types"; // Import prop-types
-import Navbar from "../Components/Navbar";
-import Footer from "../Components/Footer";
+import PropTypes from 'prop-types'; // Import prop-types
+import Navbar from '../Components/Navbar';
+import Footer from '../Components/Footer';
 
 const MainLayout = ({ children }) => {
   return (
-    <div className="flex flex-col min-h-screen bg-white">
+    <div className='flex flex-col min-h-screen bg-default'>
       <Navbar />
-      <main className="flex-grow container mx-auto p-6">{children}</main>
+      <main className='flex-grow container mx-auto p-6'>{children}</main>
       <Footer />
     </div>
   );

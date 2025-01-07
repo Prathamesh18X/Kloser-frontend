@@ -1,3 +1,4 @@
+// DeliverySelection.jsx
 import { MdOutlineMoreVert } from 'react-icons/md';
 import { AiOutlinePlus } from 'react-icons/ai';
 
@@ -7,9 +8,10 @@ const DeliverySelection = ({
   selectedAddress,
   onSelectAddress,
   onProceedToPay,
+  onAddNewAddress,
 }) => {
   return (
-    <div className='w-[460px] h-screen bg-white shadow-lg fixed top-0 right-0 z-50 flex flex-col'>
+    <div className='w-[460px] h-screen bg-default shadow-lg fixed top-0 right-0 z-50 flex flex-col'>
       {/* Header */}
       <div className='flex justify-between items-center px-6 py-4'>
         <button className='text-gray-600 text-xl'>
@@ -51,7 +53,11 @@ const DeliverySelection = ({
         </p>
 
         {/* Add New Address Button */}
-        <button className='w-full py-3 border border-gray-300 rounded-lg text-sm text-gray-800 flex items-center justify-center space-x-2'>
+        <button
+          onClick={onAddNewAddress}
+          className='w-full py-3 border border-gray-300 rounded-lg text-sm text-gray-800 flex items-center justify-center space-x-2'
+        >
+          <AiOutlinePlus />
           <span>+ Add new address</span>
         </button>
 
@@ -61,7 +67,7 @@ const DeliverySelection = ({
             key={index}
             onClick={() => onSelectAddress(index)}
             className={`border rounded-lg p-4 shadow-sm flex justify-between items-start cursor-pointer ${
-              selectedAddress === index ? 'border-blue-500 ' : 'border-gray-200'
+              selectedAddress === index ? 'border-blue-500' : 'border-gray-200'
             }`}
           >
             <div className='flex-1'>
@@ -136,10 +142,10 @@ const DeliverySelection = ({
       </div>
 
       {/* Proceed to Pay Button */}
-      <div className='px-6 py-6 '>
+      <div className='px-6 py-6'>
         <button
           onClick={onProceedToPay}
-          className='w-full py-3 bg-black text-white  text-sm font-medium'
+          className='w-full py-3 bg-black text-white rounded-lg text-sm font-medium'
         >
           PROCEED TO PAY
         </button>
