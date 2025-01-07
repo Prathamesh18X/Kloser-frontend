@@ -14,13 +14,11 @@ const Navbar = () => {
   const [searchText, setSearchText] = useState('');
   const [showDropdown, setShowDropdown] = useState(false);
 
-  // Example Data
   const [recentSearches, setRecentSearches] = useState([
     'iPhone charger',
     'Type C cable',
   ]);
 
-  // Handlers
   const handleSearchChange = (e) => {
     setSearchText(e.target.value);
     setShowDropdown(true);
@@ -47,7 +45,7 @@ const Navbar = () => {
   // };
 
   return (
-    <nav className='text-white shadow-md sticky top-0 z-50 bg-white '>
+    <nav className='text-white shadow-md sticky top-0 z-50 bg-default '>
       <div className='container mx-auto flex items-center justify-between py-4 px-4'>
         <div className='flex items-center space-x-4'>
           <Link to='/' className='text-2xl font-bold text-black '>
@@ -104,7 +102,7 @@ const Navbar = () => {
             size='lg'
           />
           {showDropdown && (
-            <div className='absolute w-full mt-2 bg-white border shadow-lg rounded-lg z-50'>
+            <div className='absolute w-full mt-2 bg-default border shadow-lg rounded-lg z-50'>
               {/* Recent Searches Section */}
               <div className='px-4 py-2'>
                 <div className='flex justify-between items-center'>

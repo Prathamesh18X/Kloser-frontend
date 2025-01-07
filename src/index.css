@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  font-family: "Inter", system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.6;
   font-size: 16px;
   --primary-color: #1e40af;
@@ -15,7 +15,9 @@
   --text-color: #1f2937;
   /* Dark text */
 }
-
+.bg-default {
+  background-color: #f5f5f4 !important;
+}
 body {
   margin: 0;
   background-color: var(--background-color);

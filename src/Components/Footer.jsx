@@ -1,23 +1,18 @@
-import React from "react";
+import React from 'react';
 
 const Footer = () => {
   return (
-    <footer className="text-gray-500 bg-white py-6">
-      <div className="container mx-auto text-center">
-        <p className="text-sm">
-          © {new Date().getFullYear()} E-Commerce Inc. All rights reserved.
+    <footer className=' bottom-0 left-2 mb-4 mr-4 text-gray-500 text-sm font-medium bg-default py-2 px-4 md:block hidden'>
+      <div className='container mx-auto'>
+        <p
+          style={{
+            fontFamily: 'Inter',
+            lineHeight: '14px',
+            textDecoration: 'none',
+          }}
+        >
+          © {new Date().getFullYear()} Koser. All rights reserved.
         </p>
-        <div className="flex justify-center mt-4 space-x-6">
-          <a href="#" className="hover:text-blue-400">
-            Privacy Policy
-          </a>
-          <a href="#" className="hover:text-blue-400">
-            Terms of Service
-          </a>
-          <a href="#" className="hover:text-blue-400">
-            Contact Us
-          </a>
-        </div>
       </div>
     </footer>
   );

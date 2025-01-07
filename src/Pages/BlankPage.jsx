@@ -1,3 +1,4 @@
+// App.jsx
 import React, { useState } from 'react';
 import ShoppingSummary from '../Components/cart/ShoppingSummary';
 import AddNewAddress from '../Components/cart/AddNewAddress';
@@ -8,6 +9,8 @@ import DeliverySelection from '../Components/cart/DeliverySelection';
 import PaymentQRCode from '../Components/cart/PaymentQRCode';
 
 const App = () => {
+  const [currentStep, setCurrentStep] = useState(1);
+
   const items = [
     {
       name: 'Bio-Cellulose Face Mask',
@@ -27,11 +30,13 @@ const App = () => {
       price: 80.2,
     },
   ];
+
   const deliveryDetails = {
     name: 'Ali Bin Ahmad',
     address:
       '123 Jalan Ampang, Apartment A-2-3, Ampang Point, 50450 Kuala Lumpur, Wilayah Persekutuan, Malaysia',
   };
+
   const deliveryDetails2 = [
     {
       type: 'Home',
@@ -50,39 +55,73 @@ const App = () => {
       email: 'zango@basicshapes.co',
     },
   ];
+
   const total = items.reduce(
     (sum, item) => sum + item.price * item.quantity,
     0
   );
+
+  const handleNextStep = () => {
+    setCurrentStep(currentStep + 1);
+  };
+
+  const handleChangeDelivery = () => {
+    setCurrentStep(6); // Transition to step 6
+  };
+
+  const handlePayWith = () => {
+    setCurrentStep(7); // Transition to step 7
+  };
+
   const handleCancelTransaction = () => {
     console.log('Transaction Cancelled');
   };
 
   return (
     <div>
-      {/* <ShoppingSummary
-        items={items}
-        total={total}
-        onCheckout={() => alert("Proceeding to checkout")}
-      /> */}
-      {/* <AddNewAddress totalAmount="598.60" /> */}
-      {/* <VerifyNumber totalAmount="598.60" phoneNumber="601234123410" /> */}
-      {/* <AddNewAddress2/>  */}
-      {/* <Checkout totalAmount='598.60' deliveryDetails={deliveryDetails} /> */}
-      {/* <DeliverySelection
-        totalAmount='598.60'
-        deliveryDetails={deliveryDetails2}
-        selectedAddress={0}
-        onSelectAddress={(index) =>
-          console.log('Selected Address Index:', index)
-        }
-        onProceedToPay={() => console.log('Proceed to Payment')}
-      /> */}
-
-      <PaymentQRCode
-        qrCodeUrl='https://via.placeholder.com/256x256.png?text=QR+Code'
-        onCancelTransaction={handleCancelTransaction}
-      />
+      {currentStep === 1 && (
+        <ShoppingSummary
+          items={items}
+          total={total}
+          onCheckout={handleNextStep}
+        />
+      )}
+      {currentStep === 2 && (
+        <AddNewAddress totalAmount='598.60' onNext={handleNextStep} />
+      )}
+      {currentStep === 3 && (
+        <VerifyNumber
+          totalAmount='598.60'
+          phoneNumber='601234123410'
+          onNext={handleNextStep}
+        />
+      )}
+      {currentStep === 4 && <AddNewAddress2 onNext={handleNextStep} />}
+      {currentStep === 5 && (
+        <Checkout
+          totalAmount='598.60'
+          deliveryDetails={deliveryDetails}
+          onChangeDelivery={handleChangeDelivery} // Pass handler for "Change" button
+          onPayWith={handlePayWith} // Pass handler for "PAY WITH" button
+        />
+      )}
+      {currentStep === 6 && (
+        <DeliverySelection
+          totalAmount='598.60'
+          deliveryDetails={deliveryDetails2}
+          selectedAddress={0}
+          onSelectAddress={(index) =>
+            console.log('Selected Address Index:', index)
+          }
+          onProceedToPay={handleNextStep}
+        />
+      )}
+      {currentStep === 7 && (
+        <PaymentQRCode
+          qrCodeUrl='https://via.placeholder.com/256x256.png?text=QR+Code'
+          onCancelTransaction={handleCancelTransaction}
+        />
+      )}
     </div>
   );
 };
