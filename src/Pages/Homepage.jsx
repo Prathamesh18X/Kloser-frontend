@@ -41,7 +41,7 @@ const Homepage = () => {
   return (
     <>
       <div className=' mx-auto py-6 text-center'>
-        <div className='sm:flex  justify-between items-center bg-gray-100 sm:py-10 md:py-14  gap-6'>
+        <div className='sm:flex  justify-between items-center bg-gray-100 sm:py-10 sm:px-6 md:py-14 md:px-4  gap-6'>
           <Card
             className='bg-[#E7E5E4] shadow-md p-6 rounded-lg flex justify-between sm:mb-0 mb-6'
             style={{
@@ -166,7 +166,7 @@ const Homepage = () => {
           </Card>
         </div>
       </div>
-      <div className='flex justify-between items-center mx-6 my-4'>
+      <div className='flex justify-between items-center mx-6 my-4 gap-3'>
         <div className='relative'>
           <Dropdown>
             <DropdownTrigger>
