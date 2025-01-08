@@ -70,24 +70,42 @@ const VerifyNumber = ({ totalAmount, phoneNumber, onNext }) => {
               />
             </svg>
           </button>
-          <h2 className='text-base font-medium text-gray-800 ml-2'>
+          <h2 className='text-[18px] font-medium leading-[25.2px] text-left text-[#78716C]  ml-2'>
             Verify Number
           </h2>
         </div>
 
-        <div className='text-right text-gray-800 text-sm font-medium'>
-          <span className='block'>Order Total</span>
-          <span className='font-semibold'>RM598.60</span>
+        <div className='text-right text-[#78716C] text-[14px] font-medium leading-[19.6px] font-inter'>
+          <span className='block text-left'>Order Total</span>
+          <span className='flex items-center justify-end text-[18px] font-medium leading-[25.2px] text-[#1C1917] font-inter'>
+            RM598.60{' '}
+            <svg
+              className='ml-2'
+              width='16'
+              height='16'
+              viewBox='0 0 16 16'
+              fill='none'
+              xmlns='http://www.w3.org/2000/svg'
+            >
+              <path
+                d='M4 6L8 10L12 6'
+                stroke='black'
+                stroke-width='1.33333'
+                stroke-linecap='round'
+                stroke-linejoin='round'
+              />
+            </svg>
+          </span>
         </div>
       </div>
 
       <div className='flex-1 flex flex-col justify-center px-6'>
-        <div className='flex justify-center items-center text-[14px] font-medium text-[#1C1917]  '>
-          <p>
+        <div className='flex justify-between items-center text-[14px] font-medium leading-[19.6px] text-[#1C1917] font-inter'>
+          <p className='text-left'>
             Enter OTP sent to{' '}
             <span className='font-medium text-black'>+{phoneNumber}</span>
           </p>
-          <button className='ml-2'>
+          <button className='text-right'>
             <svg
               width='16'
               height='16'
@@ -119,7 +137,6 @@ const VerifyNumber = ({ totalAmount, phoneNumber, onNext }) => {
             </svg>
           </button>
         </div>
-
         <div className='flex justify-center gap-3 mt-4'>
           {otp.map((value, index) => (
             <input
@@ -129,16 +146,16 @@ const VerifyNumber = ({ totalAmount, phoneNumber, onNext }) => {
               value={value}
               maxLength='1'
               onChange={(e) => handleOtpChange(e.target.value, index)}
-              className='w-[48px] h-[48px] text-center border border-gray-300 rounded-lg text-[16px] font-medium text-black focus:ring-2 focus:ring-gray-400 focus:outline-none'
+              className='w-[92px] h-[52px] text-center border border-[#D6D3D1] rounded-[8px] text-[16px] font-medium text-black focus:ring-2 focus:ring-[#BAE6FD] focus:outline-none focus:shadow-[0px_24px_40px_-16px_rgba(104,75,37,0.08),_0px_4px_6px_0px_rgba(95,74,46,0.04),_0px_1px_2px_0px_rgba(95,74,46,0.08)]'
             />
           ))}
         </div>
 
-        <p className='text-[14px] font-medium text-[#78716C] mt-4 text-center'>
+        <p className='text-[14px] font-medium leading-[19.6px] tracking-[-0.2px] text-center text-stone-500 font-inter mt-8'>
           Please enter the correct OTP to fetch saved addresses
         </p>
 
-        <div className='flex justify-center items-center mt-4'>
+        <div className='flex justify-center items-center mt-8'>
           <input
             id='keep-logged-in'
             type='checkbox'
@@ -146,17 +163,19 @@ const VerifyNumber = ({ totalAmount, phoneNumber, onNext }) => {
           />
           <label
             htmlFor='keep-logged-in'
-            className='ml-3 text-[14px] font-medium text-[#78716C] leading-[20px]'
+            className='ml-3 text-[14px] font-medium text-[#78716C] leading-[19.6px] tracking-[-0.2px] text-right  font-inter'
           >
             Keep me logged in
           </label>
         </div>
 
-        <div className='mt-4 text-center'>
+        <div className='mt-8 text-center'>
           <button
             disabled={resendDisabled}
             onClick={handleResendOtp}
-            className={`text-[14px] font-medium ${resendDisabled ? 'text-[#78716C]' : 'text-black underline'}`}
+            className={`text-[18px] font-medium leading-[25.2px] tracking-[-0.2px] text-right font-inter ${
+              resendDisabled ? 'text-[#78716C]' : 'text-[#78716C]'
+            }`}
           >
             {resendDisabled
               ? `Resend OTP in 00:${timer < 10 ? `0${timer}` : timer}`
@@ -165,13 +184,13 @@ const VerifyNumber = ({ totalAmount, phoneNumber, onNext }) => {
         </div>
       </div>
 
-      <div className='px-6 py-6  text-center text-sm text-gray-500'>
+      <div className='px-6 pb-8  text-center  text-[14px] font-medium  text-[#78716C]'>
         By proceeding, I accept the{' '}
-        <a href='#' className='underline'>
+        <a href='#' className='text-[#78716C] '>
           T&C
         </a>{' '}
         and{' '}
-        <a href='#' className='underline'>
+        <a href='#' className='text-[#78716C] '>
           Privacy Policy
         </a>
       </div>

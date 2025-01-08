@@ -4,16 +4,17 @@ import 'swiper/css/navigation';
 
 const ShoppingCartItem = ({ item }) => {
   return (
-    <div className='flex items-center justify-between py-4 border-b border-gray-200'>
-      <div className='flex items-center gap-4'>
+    <div className='flex items-center bg-red justify-between py-4 border-b border-gray-200'>
+      <div className='flex items-center gap-4 mb-3'>
         <img
           src={item.image}
           alt={item.name}
           className='w-16 h-16 object-cover rounded-md'
         />
         <div>
-          <h3 className='text-sm font-medium text-gray-900'>{item.name}</h3>
-          <div className='flex items-center gap-2 mt-5'>
+          <h3 className='text-sm font-medium text-[#1C1917]'>{item.name}</h3>
+
+          <div className='flex items-center gap-2 mt-5 '>
             <button className='text-gray-500 text-sm'>
               <svg
                 width='16'
@@ -87,8 +88,8 @@ const ShoppingCartItem = ({ item }) => {
           </div>
         </div>
       </div>
-      <div className='flex flex-col items-end '>
-        <button className='text-gray-400 text-sm mb-5 '>
+      <div className='flex flex-col items-end mb-3'>
+        <button className='text-sm font-medium text-[#1C1917] '>
           <svg
             width='16'
             height='16'
@@ -141,48 +142,56 @@ const YouMightLikeItem = ({ item }) => {
       <img
         src={item.image}
         alt={item.name}
-        className='w-full h-34 object-cover'
+        className='w-full h-[185px] object-cover'
       />
-      <button className='absolute top-2 right-2 bg-black text-white text-xs py-1 px-3 rounded-md'>
+      <button className='absolute top-3 right-5 bg-black text-white text-xs py-1 px-3 rounded-md'>
         + Add
       </button>
-      <p className='absolute bottom-2 left-2 text-xs bg-white bg-opacity-70 px-2 py-0.5 rounded-md'>
+      <p
+        className='absolute bottom-2 left-2 text-xs px-2 py-0.5 rounded-md text-[#FFFFFF]'
+        style={{
+          backgroundColor: '#1E1E1E',
+          opacity: '0.4',
+          backdropFilter: 'blur(4px)',
+        }}
+      >
         RM{item.price.toFixed(2)}
       </p>
     </div>
   );
 };
 
-const ShoppingSummary = ({ items, total, onCheckout }) => {
+const ShoppingSummary = ({ items, total, onCheckout, allitems }) => {
   return (
-    <div className='w-[460px] h-screen bg-white shadow-lg fixed top-0 right-0 z-50 overflow-y-auto'>
-      <div className='p-6 border-gray-200'>
-        <h2 className='text-left text-gray-600 font-inter font-medium text-[16px] leading-[22.4px] md:text-[18px] md:leading-[25.2px]'>
-          Shopping Summary
+    <div className='w-[460px] h-screen bg-default fixed top-0 right-0 z-50 overflow-y-auto'>
+      <div className='p-7 border-gray-200'>
+        <h2 className='text-left text-[#78716C] font-inter font-medium text-[16px] leading-[22.4px] md:text-[18px] md:leading-[25.2px]'>
+          Shopping summary
         </h2>
       </div>
 
-      <div className='px-6'>
+      <div className='px-7'>
         {items.map((item, index) => (
           <ShoppingCartItem key={index} item={item} />
         ))}
       </div>
 
-      <div className='px-6 mt-4 '>
+      <div className='px-7 mt-7 '>
         <a
           href='#'
-          className='text-sm text-gray-600 underline hover:text-gray-800 block text-center border-b border-gray-200 pb-5'
+          className=' text-sm font-medium underline decoration-solid underline-offset-2  block text-center pb-8 border-b border-gray-200 decoration-skip-ink-auto leading-[19.6px] text-[#78716C]'
         >
           Continue Shopping
         </a>
       </div>
 
-      <div className='px-6 mt-6'>
-        <h3 className='text-sm font-medium text-gray-600 mb-4'>
+      <div className='pl-7 mt-6'>
+        <h3 className='text-left text-sm pb-6 font-medium text-[#78716C] leading-[19.6px] decoration-skip-ink-none'>
           You might also like
         </h3>
-        <Swiper spaceBetween={15} slidesPerView={2.2}>
-          {items.map((item, index) => (
+
+        <Swiper spaceBetween={20} slidesPerView={2.4}>
+          {allitems.map((item, index) => (
             <SwiperSlide key={index}>
               <YouMightLikeItem item={item} />
             </SwiperSlide>
@@ -190,20 +199,22 @@ const ShoppingSummary = ({ items, total, onCheckout }) => {
         </Swiper>
       </div>
 
-      <div className='px-6 py-6 mt-6 border-t border-gray-200'>
-        <div className='flex justify-between text-sm font-medium text-gray-900'>
+      <div className='px-7 py-5 mt-5 border-t border-gray-200'>
+        <div className='flex justify-between text-[16px] font-medium text-[#1C1917] leading-[22.4px] font-inter'>
           <span>Subtotal</span>
-          <span>RM{total.toFixed(2)}</span>
+          <span className='text-right'>RM{total.toFixed(2)}</span>
         </div>
-        <p className='text-xs text-gray-500 mt-2'>
+
+        <p className='text-[12px] font-medium leading-[16.8px] text-left text-[#78716C] font-inter mt-2'>
           Tax included.{' '}
           <a href='#' className='underline'>
             Shipping
           </a>{' '}
           calculated at checkout.
         </p>
+
         <button
-          className='w-full bg-black text-white py-3 mt-6  text-sm font-semibold'
+          className='w-full bg-[#000000] text-white py-3 mt-6 text-[14px] font-medium  '
           onClick={onCheckout}
         >
           CHECK OUT

@@ -16,7 +16,7 @@ const AddNewAddress = ({ totalAmount, onNext }) => {
   };
 
   return (
-    <div className='w-[460px] h-screen bg-default shadow-lg fixed top-16 right-0 z-50 overflow-y-auto'>
+    <div className='w-[460px] h-screen bg-default shadow-lg fixed  right-0 z-50 overflow-y-auto'>
       {/* Header */}
       <div className='flex justify-between items-center px-6 py-4 '>
         <div className='flex items-center'>
@@ -45,14 +45,32 @@ const AddNewAddress = ({ totalAmount, onNext }) => {
               />
             </svg>
           </button>
-          <h2 className='text-base font-medium text-gray-800 ml-2'>
+          <h2 className='text-[18px] font-medium leading-[25.2px] text-left text-[#78716C]  ml-2'>
             Add new address
           </h2>
         </div>
 
-        <div className='text-right text-gray-800 text-sm font-medium'>
-          <span className='block'>Order Total</span>
-          <span className='font-semibold'>RM598.60</span>
+        <div className='text-right text-[#78716C] text-[14px] font-medium leading-[19.6px] font-inter'>
+          <span className='block text-left'>Order Total</span>
+          <span className='flex items-center justify-end text-[18px] font-medium leading-[25.2px] text-[#1C1917] font-inter'>
+            RM598.60{' '}
+            <svg
+              className='ml-2'
+              width='16'
+              height='16'
+              viewBox='0 0 16 16'
+              fill='none'
+              xmlns='http://www.w3.org/2000/svg'
+            >
+              <path
+                d='M4 6L8 10L12 6'
+                stroke='black'
+                stroke-width='1.33333'
+                stroke-linecap='round'
+                stroke-linejoin='round'
+              />
+            </svg>
+          </span>
         </div>
       </div>
 
@@ -79,56 +97,35 @@ const AddNewAddress = ({ totalAmount, onNext }) => {
             Please enter a valid phone number
           </p>
         )}
-
         <button
-          className='w-full h-[48px] mt-4 border border-gray-300 rounded-lg text-sm font-medium text-gray-800 hover:bg-gray-100'
+          className='w-full h-[48px] mt-4 border border-gray-300 rounded-[7px] text-[14px] font-medium leading-[19.6px] text-[#1C1917] bg-white hover:bg-gray-100 font-inter'
           onClick={validatePhoneNumber}
         >
           + Add new address
         </button>
 
-        <div className='flex items-start mt-6'>
+        <div className='flex items-center justify-center mt-6 space-x-3'>
           <input
             id='keep-posted'
             type='checkbox'
-            className='w-4 h-4 text-black border-gray-300 rounded focus:ring-black'
+            className='w-4 h-4 text-black border-gray-300 rounded focus:ring-black checked:bg-black'
           />
           <label
             htmlFor='keep-posted'
-            className='ml-3 font-inter text-[14px] font-medium leading-[19.6px] tracking-[-0.2px] text-right'
-            style={{
-              color: '#78716C',
-            }}
+            className='font-inter text-[14px] font-medium text-stone-500'
           >
             Keep me posted about offers and new collections
           </label>
         </div>
       </div>
 
-      <div
-        className='px-6 py-6 text-center font-inter text-[14px] font-medium leading-[19.6px] tracking-[-0.2px]'
-        style={{
-          color: '#78716C',
-          textUnderlinePosition: 'from-font',
-          textDecorationSkipInk: 'none',
-        }}
-      >
+      <div className='px-6 pb-8  text-center  text-[14px] font-medium  text-[#78716C]'>
         By proceeding, I accept the{' '}
-        <a
-          href='#'
-          style={{
-            color: '#78716C',
-          }}
-        >
+        <a href='#' className='text-[#78716C] '>
           T&C
         </a>{' '}
         and{' '}
-        <a
-          href='#'
-          style={{
-            color: '#78716C',
-          }}
-        >
+        <a href='#' className='text-[#78716C] '>
           Privacy Policy
         </a>
       </div>
