@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Input, Button, Chip } from '@nextui-org/react';
-import sun from '../../public/assets/sun.svg';
-import moon from '../../public/assets/moon.svg';
+// import sun from '../../public/assets/sun.svg';
+// import moon from '../../public/assets/moon.svg';
 import cart from '../../public/assets/cart.svg';
 import fullLogo from '../../public/assets/kloserFullLogo.svg';
 import halfLogo from '../../public/assets/kLogo.svg';
@@ -45,8 +45,8 @@ const Navbar = () => {
   // };
 
   return (
-    <nav className='text-white shadow-md sticky top-0 z-50 bg-default '>
-      <div className='mx-auto flex items-center justify-between py-2 px-8'>
+    <nav className='container mx-auto text-white w-full top-0 z-50 bg-default'>
+      <div className='mx-auto flex items-center justify-between pb-0 py-4 px-16'>
         <div className='flex items-center space-x-4'>
           <Link to='/' className='text-2xl font-bold text-black '>
             {isMobile ? (
@@ -62,7 +62,7 @@ const Navbar = () => {
             )}
           </Link>
 
-          {!isMobile && (
+          {/* {!isMobile && (
             <div className='flex items-center space-x-4'>
               <Button
                 isIconOnly
@@ -85,10 +85,10 @@ const Navbar = () => {
                 <img src={moon} alt='moon' />
               </Button>
             </div>
-          )}
+          )} */}
         </div>
 
-        <div className='relative w-full max-w-lg mx-auto'>
+        <div className='relative w-[400px]  h-[40px] max-w-lg mx-auto'>
           <Input
             clearable
             value={searchText}
@@ -99,10 +99,17 @@ const Navbar = () => {
             onFocus={() => setShowDropdown(true)}
             onBlur={() => setTimeout(() => setShowDropdown(false), 200)}
             className='w-full text-black focus:bg-gray-200 focus:outline-none rounded-lg'
-            size='lg'
+            size='md'
           />
           {showDropdown && (
-            <div className='absolute w-full mt-2 bg-default border shadow-lg rounded-lg z-50'>
+            <div
+              className='absolute justify-evenly mt-2 bg-default border shadow-lg rounded-lg z-50'
+              style={{
+                width: '500px', // Keep the dropdown width as is
+                left: '50%', // Move dropdown to the center horizontally
+                transform: 'translateX(-50%)', // Center-align dropdown relative to the parent
+              }}
+            >
               {/* Recent Searches Section */}
               <div className='px-4 py-2'>
                 <div className='flex justify-between items-center'>
@@ -166,9 +173,23 @@ const Navbar = () => {
         </div>
 
         {!isMobile && (
-          <Link to='/cart' className='hover:text-gray-300'>
-            <img src={cart} alt='cart' className='h-6 w-6' />
-          </Link>
+          <div className='flex space-x-1'>
+            <div className='flex items-center justify-center w-6 h-6'>
+              <svg
+                width='6'
+                height='6'
+                viewBox='0 0 6 6'
+                fill='none'
+                xmlns='http://www.w3.org/2000/svg'
+              >
+                <circle cx='3' cy='3' r='3' fill='#DC2626' />
+              </svg>
+            </div>
+            <div className='text-gray-800'> 2 </div>
+            <Link to='/cart' className='hover:text-gray-300'>
+              <img src={cart} alt='cart' className='h-6 w-6' />
+            </Link>
+          </div>
         )}
       </div>
     </nav>
