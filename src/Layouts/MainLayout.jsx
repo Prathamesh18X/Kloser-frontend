@@ -29,7 +29,7 @@ const MainLayout = ({ children }) => {
   return (
     <div className='flex flex-col min-h-screen bg-default'>
       <Navbar />
-      <main className='flex-grow container mx-auto p-6'>{children}</main>
+      <main className='flex-grow mx-auto px-12'>{children}</main>
       <Footer />
     </div>
   );
