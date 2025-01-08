@@ -4,7 +4,6 @@ import {
   CardFooter,
   Image,
   Button,
-  // Text,
   ButtonGroup,
   Breadcrumbs,
   BreadcrumbItem,
@@ -23,53 +22,137 @@ const ProductPage = () => {
   const navigate = useNavigate();
 
   return (
-    <div className='container mx-auto px-6 py-8'>
-      {/* Back Button */}
-      <div
-        onClick={() => navigate('/')}
-        className='mb-4 flex items-center cursor-pointer'
-      >
-        <ArrowBackIosRoundedIcon fontSize='small' />
-        <span className='ml-2 text-sm font-semibold'>Back</span>
-      </div>
+    <div className='flex w-full h-[100vh] gap-4 px-6 py-8'>
+      {/* Left Section: Main Image + Small Images */}
+      <div className='flex-[0.65] h-full overflow-hidden overflow-y-scroll custom-scrollbar pr-6'>
+        <div className='flex flex-col gap-4 h-full'>
+          {/* Back Button */}
+          <div
+            onClick={() => navigate('/')}
+            className='mb-4 flex items-center cursor-pointer'
+          >
+            <ArrowBackIosRoundedIcon fontSize='small' />
+            <span className='ml-2 text-sm font-semibold'>Back</span>
+          </div>
 
-      {/* Main Section */}
-      <div className='flex flex-wrap gap-6'>
-        {/* Main Product Image Card */}
-        <div className='flex-1 max-w-lg'>
-          <Card shadow='md' className='relative overflow-hidden'>
-            <Image
-              removeWrapper
-              src='https://images.unsplash.com/photo-1732209988927-396f5103ede8?q=80&w=1933&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-              alt='Main Product'
-              className='object-cover w-full h-auto'
-            />
-          </Card>
+          <div className='flex h-full'>
+            {/* Small Images */}
+            <div className='flex justify-start gap-2 justify-between h-[75px] w-[30%] p-2'>
+              <Card shadow='sm' className=' w-full overflow-hidden'>
+                <Image
+                  removeWrapper
+                  src='https://images.unsplash.com/photo-1732209988927-396f5103ede8?q=80&w=1933&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+                  alt='Small Image 1'
+                  className='object-cover  w-full h-full'
+                />
+              </Card>
+              <Card shadow='sm' className=' w-full overflow-hidden'>
+                <Image
+                  removeWrapper
+                  src='https://images.unsplash.com/photo-1732209988927-396f5103ede8?q=80&w=1933&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+                  alt='Small Image 2'
+                  className='object-cover w-full h-full'
+                />
+              </Card>
+              <Card shadow='sm' className='w-full overflow-hidden'>
+                <Image
+                  removeWrapper
+                  src='https://images.unsplash.com/photo-1732209988927-396f5103ede8?q=80&w=1933&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D '
+                  alt='Small Image 3'
+                  className='object-cover w-full h-full'
+                />
+              </Card>
+            </div>
+            {/* Main Product Image Card */}
+            <div className='flex-[0.8] relative'>
+              <Card shadow='md' className='relative overflow-hidden h-full'>
+                <Image
+                  removeWrapper
+                  src='https://images.unsplash.com/photo-1732209988927-396f5103ede8?q=80&w=1933&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+                  alt='Main Product'
+                  className='object-cover w-full h-full'
+                />
+              </Card>
+            </div>
+          </div>
         </div>
 
-        {/* Product Info Section */}
+        {/* Masonry Section */}
+        <div className='mt-12'>
+          <span className='text-lg font-semibold mb-4'>Similar Products</span>
+          <Masonry
+            columns={{ xs: 1, sm: 2, md: 3 }}
+            spacing={isMobile ? 2 : 4}
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              margin: '0 auto',
+              maxWidth: '100%',
+            }}
+          >
+            {cardData.map((card) => (
+              <div key={card.id}>
+                <Card className='relative shadow-md overflow-hidden'>
+                  <CardHeader className='absolute z-10 top-2 left-2 flex-col items-start'>
+                    <span className='text-tiny text-white/60 uppercase font-bold'>
+                      {card.headerSubtitle}
+                    </span>
+                    <h4 className='text-white font-medium text-large'>
+                      {card.headerTitle}
+                    </h4>
+                  </CardHeader>
+                  <Image
+                    removeWrapper
+                    alt='Card background'
+                    className='z-0 w-full h-auto object-cover'
+                    src={card.imageUrl}
+                    width={card.imageSize.width}
+                    height={card.imageSize.height}
+                  />
+                  <CardFooter
+                    className={`absolute z-10 ${
+                      isMobile ? 'bottom-1 left-1' : 'bottom-2 left-2'
+                    } flex-col items-start`}
+                  >
+                    <Button
+                      className='bg-black/50 text-white hover:bg-black/90'
+                      radius='sm'
+                      size='sm'
+                    >
+                      <span className='text-white text-[10px] font-semibold'>
+                        {card.buttonText}
+                      </span>
+                    </Button>
+                  </CardFooter>
+                </Card>
+              </div>
+            ))}
+          </Masonry>
+        </div>
+      </div>
+
+      {/* Right Section: Product Info */}
+      <div className='flex-[0.35] h-full sticky top-8'>
         <Card
           shadow='md'
-          className={`bg-[#E7E5E4] flex-1 max-w-lg ${
-            isMobile ? 'mt-6' : 'mt-0'
-          } flex flex-col justify-between`}
+          className='bg-[#E7E5E4] flex flex-col justify-between h-auto p-6'
         >
-          <div className='p-6'>
-            {/* Breadcrumbs */}
-            <CardHeader className='flex-col items-start'>
-              <Breadcrumbs
-                className='text-sm text-gray-500'
-                itemClasses={{
-                  separator: 'px-1',
-                }}
-                separator='/'
-              >
-                <BreadcrumbItem>Home</BreadcrumbItem>
-                <BreadcrumbItem>Gentle Cleanser</BreadcrumbItem>
-              </Breadcrumbs>
-            </CardHeader>
+          {/* Breadcrumbs */}
+          <CardHeader className='flex-col items-start mb-4'>
+            <Breadcrumbs
+              className='text-sm text-gray-500'
+              itemClasses={{
+                separator: 'px-1',
+              }}
+              separator='/'
+            >
+              <BreadcrumbItem>Home</BreadcrumbItem>
+              <BreadcrumbItem>Gentle Cleanser</BreadcrumbItem>
+            </Breadcrumbs>
+          </CardHeader>
 
-            {/* Product Details */}
+          {/* Product Details */}
+          <div>
             <h1 className='text-3xl font-bold mb-2'>Gentle Cleanser</h1>
             <p className='text-gray-500 text-sm uppercase font-medium mb-4'>
               A Soothing & Conditioning Cleanser (120ml / 4FL. OZ.)
@@ -79,7 +162,7 @@ const ProductPage = () => {
                 RM199.50
               </span>
               <span className='text-xl font-semibold text-gray-500'>
-                RM99.00  |  Net Wt. 4fl. oz.(120ml)
+                RM99.00 | Net Wt. 4fl. oz.(120ml)
               </span>
             </div>
             <p className='text-sm font-medium text-black mb-6'>
@@ -90,27 +173,36 @@ const ProductPage = () => {
             <div className='flex items-center mb-6'>
               <ButtonGroup>
                 <Button
+                  asChild
                   variant='light'
                   isIconOnly
                   disableRipple
                   disableAnimation
                   size='sm'
                   auto
-                  className='hover:bg-white'
+                  data-hover={false}
                 >
                   <img src={decrementBtn} alt='Decrement' />
                 </Button>
-                <Button variant='light' size='sm' auto>
+                <Button
+                  isIconOnly
+                  data-hover={false}
+                  variant='light'
+                  size='sm'
+                  auto
+                >
                   <span className='text-lg font-semibold'>1</span>
                 </Button>
+
                 <Button
+                  asChild
                   variant='light'
                   isIconOnly
                   disableRipple
                   disableAnimation
                   size='sm'
                   auto
-                  className='hover:bg-white'
+                  data-hover={false}
                 >
                   <img src={incrementBtn} alt='Increment' />
                 </Button>
@@ -143,59 +235,6 @@ const ProductPage = () => {
             </ul>
           </div>
         </Card>
-      </div>
-
-      {/* Masonry Section */}
-      <div className='mt-12'>
-        <span className='text-lg font-semibold mb-4'>Similar Products</span>
-        <Masonry
-          columns={{ xs: 1, sm: 2, md: 3 }}
-          spacing={isMobile ? 2 : 4}
-          sx={{
-            display: 'flex',
-            alignItems: 'center',
-            margin: '0 auto',
-            maxWidth: '100%',
-          }}
-        >
-          {cardData.map((card) => (
-            <div key={card.id}>
-              <Card className='relative shadow-md overflow-hidden'>
-                <CardHeader className='absolute z-10 top-2 left-2 flex-col items-start'>
-                  <span className='text-tiny text-white/60 uppercase font-bold'>
-                    {card.headerSubtitle}
-                  </span>
-                  <h4 className='text-white font-medium text-large'>
-                    {card.headerTitle}
-                  </h4>
-                </CardHeader>
-                <Image
-                  removeWrapper
-                  alt='Card background'
-                  className='z-0 w-full h-auto object-cover'
-                  src={card.imageUrl}
-                  width={card.imageSize.width}
-                  height={card.imageSize.height}
-                />
-                <CardFooter
-                  className={`absolute z-10 ${
-                    isMobile ? 'bottom-1 left-1' : 'bottom-2 left-2'
-                  } flex-col items-start`}
-                >
-                  <Button
-                    className='bg-black/50 text-white hover:bg-black/90'
-                    radius='sm'
-                    size='sm'
-                  >
-                    <span className='text-white text-[10px] font-semibold'>
-                      {card.buttonText}
-                    </span>
-                  </Button>
-                </CardFooter>
-              </Card>
-            </div>
-          ))}
-        </Masonry>
       </div>
     </div>
   );
