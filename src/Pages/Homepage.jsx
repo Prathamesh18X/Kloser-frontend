@@ -41,12 +41,12 @@ const Homepage = () => {
   return (
     <>
       <div className=' mx-auto py-6 text-center'>
-        <div className='sm:flex  justify-between items-center bg-gray-100 sm:py-10 sm:px-6 md:py-14 md:px-4  gap-6'>
+        <div className='sm:flex h-[360px] justify-between items-center bg-gray-100 sm:py-10 sm:px-6 md:py-6 md:px-4  gap-6'>
           <Card
-            className='bg-[#E7E5E4] shadow-md p-6 rounded-lg flex justify-between sm:mb-0 mb-6'
+            className='bg-[#E7E5E4] shadow-md p-4 rounded-lg flex justify-between  sm:mb-0 mb-6'
             style={{
-              width: `${isMobile ? '100%' : '280px'}`,
-              height: `${isMobile ? '100%' : '370px'}`,
+              width: `${isMobile ? '100%' : '270px'}`,
+              height: `${isMobile ? '100%' : '360px'}`,
             }}
           >
             <CardHeader className='flex items-center space-x-4'>
@@ -54,15 +54,15 @@ const Homepage = () => {
               <h2 className='text-sm font-bold text-black'>Store Name</h2>
             </CardHeader>
 
-            <div className=' text-gray-600 md:py-6 pb-6'>
+            <div className=' text-gray-600 md:py-6 px-4'>
               <p className='text-sm text-left'>
                 Store Name is your shopping destination for fashion, home,
                 beauty, kids&apos; clothes and more. Browse the latest
-                collections and find quality pieces at affordable prices.
+                collections and find quality pieces at affordable
               </p>
             </div>
 
-            <CardFooter className='flex justify-start md:mt-6'>
+            <CardFooter className='p-0 flex justify-start md:mt-6'>
               <Button
                 className='bg-black text-white hover:bg-gray-800'
                 radius='full'
