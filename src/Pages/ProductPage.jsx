@@ -31,7 +31,7 @@ const ProductPage = () => {
   const { isMobile } = useScreenSize();
   const navigate = useNavigate();
 
-  const [currentStep, setCurrentStep] = useState(1);
+  const [currentStep, setCurrentStep] = useState(0);
 
   const items = [
     {
@@ -220,9 +220,9 @@ const ProductPage = () => {
   };
 
   return (
-    <div className='flex w-full h-[80vh] gap-4 px-6 py-8 overflow-hidden'>
+    <div className='flex w-full h-[100vh] gap-4 px-6 py-8 '>
       {/* Left Section: Main Image + Small Images */}
-      <div className='flex-[0.65] h-full  overflow-y-scroll  pr-6'>
+      <div className='flex-[0.65] h-full overflow-hidden overflow-y-scroll custom-scrollbar pr-6'>
         <div className='flex flex-col gap-4 '>
           {/* Back Button */}
           {/* <div
@@ -355,7 +355,6 @@ const ProductPage = () => {
           </Masonry>
         </div>
       </div>
-
       {/* Right Section: Product Info */}
       <div className='flex-[0.35] h-full sticky top-8'>
         <Card
@@ -461,57 +460,57 @@ const ProductPage = () => {
           </div>
         </Card>
       </div>
-      <div>
-        {currentStep > 0 && (
+      {currentStep > 0 && (
+        <div>
           <div className='fixed inset-0 bg-black bg-opacity-50 z-40'></div>
-        )}
-        <div className='fixed inset-0 z-50 flex justify-center items-center'>
-          {currentStep === 1 && (
-            <ShoppingSummary
-              items={items}
-              allitems={allitems}
-              total={total}
-              onCheckout={handleNextStep}
-            />
-          )}
-          {currentStep === 2 && (
-            <AddNewAddress totalAmount='598.60' onNext={handleNextStep} />
-          )}
-          {currentStep === 3 && (
-            <VerifyNumber
-              totalAmount='598.60'
-              phoneNumber='601234123410'
-              onNext={handleNextStep}
-            />
-          )}
-          {currentStep === 4 && <AddNewAddress2 onNext={handleNextStep} />}
-          {currentStep === 5 && (
-            <Checkout
-              totalAmount='598.60'
-              deliveryDetails={deliveryDetails}
-              onChangeDelivery={handleChangeDelivery} // Pass handler for "Change" button
-              onPayWith={handlePayWith} // Pass handler for "PAY WITH" button
-            />
-          )}
-          {currentStep === 6 && (
-            <DeliverySelection
-              totalAmount='598.60'
-              deliveryDetails={deliveryDetails2}
-              selectedAddress={0}
-              onSelectAddress={(index) =>
-                console.log('Selected Address Index:', index)
-              }
-              onProceedToPay={handleNextStep}
-            />
-          )}
-          {currentStep === 7 && (
-            <PaymentQRCode
-              qrCodeUrl='https://via.placeholder.com/256x256.png?text=QR+Code'
-              onCancelTransaction={handleCancelTransaction}
-            />
-          )}
+          <div className='fixed inset-0 z-50 flex justify-center items-center'>
+            {currentStep === 1 && (
+              <ShoppingSummary
+                items={items}
+                allitems={allitems}
+                total={total}
+                onCheckout={handleNextStep}
+              />
+            )}
+            {currentStep === 2 && (
+              <AddNewAddress totalAmount='598.60' onNext={handleNextStep} />
+            )}
+            {currentStep === 3 && (
+              <VerifyNumber
+                totalAmount='598.60'
+                phoneNumber='601234123410'
+                onNext={handleNextStep}
+              />
+            )}
+            {currentStep === 4 && <AddNewAddress2 onNext={handleNextStep} />}
+            {currentStep === 5 && (
+              <Checkout
+                totalAmount='598.60'
+                deliveryDetails={deliveryDetails}
+                onChangeDelivery={handleChangeDelivery} // Pass handler for "Change" button
+                onPayWith={handlePayWith} // Pass handler for "PAY WITH" button
+              />
+            )}
+            {currentStep === 6 && (
+              <DeliverySelection
+                totalAmount='598.60'
+                deliveryDetails={deliveryDetails2}
+                selectedAddress={0}
+                onSelectAddress={(index) =>
+                  console.log('Selected Address Index:', index)
+                }
+                onProceedToPay={handleNextStep}
+              />
+            )}
+            {currentStep === 7 && (
+              <PaymentQRCode
+                qrCodeUrl='https://via.placeholder.com/256x256.png?text=QR+Code'
+                onCancelTransaction={handleCancelTransaction}
+              />
+            )}
+          </div>
         </div>
-      </div>
+      )}{' '}
     </div>
   );
 };
