@@ -60,8 +60,14 @@ const Navbar = () => {
             }`}
             onFocus={() => setShowDropdown(true)}
             onBlur={() => setTimeout(() => setShowDropdown(false), 200)}
-            className='w-full text-black focus:bg-gray-200 focus:outline-none rounded-lg'
+            className='w-full text-black focus:outline-none rounded-lg'
             size='md'
+            css={{
+              backgroundColor: 'rgb(229 231 235)', // Tailwind's bg-gray-200 in RGB
+              '&:focus': {
+                backgroundColor: 'rgb(229 231 235)', // Maintain the same color on focus
+              },
+            }}
           />
           {showDropdown && (
             <div

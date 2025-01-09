@@ -25,12 +25,13 @@ import VerifyNumber from '../Components/cart/VerifyNumber';
 import Checkout from '../Components/cart/Checkout';
 import DeliverySelection from '../Components/cart/DeliverySelection';
 import PaymentQRCode from '../Components/cart/PaymentQRCode';
+import { useProductDetails } from '../States/useZustandStore';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 const ProductPage = () => {
   const { isMobile } = useScreenSize();
   const navigate = useNavigate();
-
+  const { selectedProduct } = useProductDetails();
   const [currentStep, setCurrentStep] = useState(0);
 
   const items = [
@@ -222,21 +223,21 @@ const ProductPage = () => {
   return (
     <div className='flex w-full h-[100vh] gap-4 px-6 py-8 '>
       {/* Left Section: Main Image + Small Images */}
-      <div className='flex-[0.65] h-full overflow-hidden overflow-y-scroll custom-scrollbar pr-6'>
+      <div className='flex-[0.65] h-full overflow-hidden overflow-y-scroll scrollbar-none custom-scrollbar pr-6'>
         <div className='flex flex-col gap-4 '>
           {/* Back Button */}
-          {/* <div
-            onClick={() => navigate('/')}
-            className='mb-4 flex items-center cursor-pointer'
-          >
-            <ArrowBackIosRoundedIcon fontSize='small' />
-            <span className='ml-2 text-sm font-semibold'>Back</span>
-          </div> */}
 
-          <div className='flex'>
+          <div className=' relative flex'>
             {/* Left Section */}
+            <div
+              onClick={() => navigate('/')}
+              className='absolute top-0 left-0 mt-2 mr-2 flex items-center cursor-pointer'
+            >
+              <ArrowBackIosRoundedIcon fontSize='small' />
 
-            <div className='w-1/3 flex align-items-center  gap-2'>
+              <span className='ml-2 text-sm font-semibold'>Back</span>
+            </div>
+            <div className='w-1/3 flex align-items-center gap-2'>
               <Swiper
                 spaceBetween={20}
                 slidesPerView={3}
@@ -293,7 +294,7 @@ const ProductPage = () => {
               <Card shadow='md' className='h-full'>
                 <Image
                   removeWrapper
-                  src='https://images.unsplash.com/photo-1732209988927-396f5103ede8?q=80&w=1933&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+                  src={selectedProduct?.imageUrl}
                   alt='Main Product'
                   className='rounded-lg'
                 />
@@ -371,13 +372,15 @@ const ProductPage = () => {
               separator='/'
             >
               <BreadcrumbItem>Home</BreadcrumbItem>
-              <BreadcrumbItem>Gentle Cleanser</BreadcrumbItem>
+              <BreadcrumbItem>{selectedProduct?.headerTitle}</BreadcrumbItem>
             </Breadcrumbs>
           </CardHeader>
 
           {/* Product Details */}
           <div>
-            <h1 className='text-3xl font-bold mb-2'>Gentle Cleanser</h1>
+            <h1 className='text-3xl font-bold mb-2'>
+              {selectedProduct?.headerSubtitle}
+            </h1>
             <p className='text-gray-500 text-sm uppercase font-medium mb-4'>
               A Soothing & Conditioning Cleanser (120ml / 4FL. OZ.)
             </p>
