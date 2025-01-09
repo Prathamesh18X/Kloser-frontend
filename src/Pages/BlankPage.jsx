@@ -8,7 +8,7 @@ import Checkout from '../Components/cart/Checkout';
 import DeliverySelection from '../Components/cart/DeliverySelection';
 import PaymentQRCode from '../Components/cart/PaymentQRCode';
 import Navbar from '../Components/Navbar';
-const App = () => {
+const Blankpage = () => {
   const [currentStep, setCurrentStep] = useState(2);
 
   const items = [
@@ -252,4 +252,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Blankpage;
