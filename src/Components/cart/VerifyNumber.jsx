@@ -42,7 +42,7 @@ const VerifyNumber = ({ totalAmount, phoneNumber, onNext }) => {
   };
 
   return (
-    <div className='w-[480px] h-screen bg-default shadow-lg fixed top-[65.5px] right-0 z-50 overflow-y-auto flex flex-col justify-between'>
+    <div className='w-[480px] h-[calc(100vh-78.5px)] bg-default fixed top-[78.5px] right-0 z-50 overflow-y-auto flex flex-col justify-between'>
       <div className='flex justify-between items-center px-6 py-4 '>
         <div className='flex items-center'>
           <button className='text-gray-600 text-xl'>

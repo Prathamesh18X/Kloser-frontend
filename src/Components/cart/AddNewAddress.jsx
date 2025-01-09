@@ -16,7 +16,7 @@ const AddNewAddress = ({ totalAmount, onNext }) => {
   };
 
   return (
-    <div className='w-[480px] h-screen bg-default shadow-lg fixed top-[65.5px] right-0 z-50 overflow-y-auto'>
+    <div className='w-[480px] h-[calc(100vh-78.5px)] bg-default fixed top-[78.5px] right-0 z-50 overflow-y-auto'>
       {/* Header */}
       <div className='flex justify-between items-center px-6 py-4 '>
         <div className='flex items-center'>

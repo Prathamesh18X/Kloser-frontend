@@ -19,7 +19,7 @@ const PaymentQRCode = ({ qrCodeUrl, onCancelTransaction }) => {
   };
 
   return (
-    <div className='w-[480px] h-screen bg-default shadow-lg fixed top-0 fixed top-[65.5px] right-0 z-50 overflow-y-auto flex flex-col items-center justify-between'>
+    <div className='w-[480px] h-[calc(100vh-78.5px)] bg-default fixed top-[78.5px] right-0 z-50 overflow-y-auto flex flex-col items-center justify-between'>
       <div className='text-center px-6 pt-10 mt-10 flex flex-col items-center justify-center'>
         <h2 className='text-[18px] font-medium leading-[25.2px] text-[#1C1917]'>
           Pay Securely with DuitNow QR
