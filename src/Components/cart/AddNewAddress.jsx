@@ -16,7 +16,7 @@ const AddNewAddress = ({ totalAmount, onNext }) => {
   };
 
   return (
-    <div className='w-[460px] h-screen bg-default shadow-lg fixed  right-0 z-50 overflow-y-auto'>
+    <div className='w-[480px] h-screen bg-default shadow-lg fixed top-[65.5px] right-0 z-50 overflow-y-auto'>
       {/* Header */}
       <div className='flex justify-between items-center px-6 py-4 '>
         <div className='flex items-center'>
@@ -75,23 +75,17 @@ const AddNewAddress = ({ totalAmount, onNext }) => {
       </div>
 
       <div className='flex flex-col justify-center px-6 py-6 h-[calc(100vh-144px)]'>
-        <label
-          htmlFor='phone-number'
-          className='block text-sm font-medium text-gray-800 mb-2'
-        >
+        <label className='block text-sm font-medium text-gray-800 mb-2'>
           Phone number
         </label>
-        <PhoneInput
-          country={'my'}
+        <input
+          type='tel'
           value={phoneNumber}
-          onChange={(value) => setPhoneNumber(value)}
-          inputClass={`w-full h-[48px] border ${error ? 'border-red-500' : 'border-gray-300'} rounded-lg px-4 text-sm text-gray-800`}
-          containerStyle={{
-            width: '100%',
-            borderRadius: '8px',
-          }}
+          onChange={(e) => setPhoneNumber(e.target.value)}
           placeholder='Enter phone number'
+          className='w-full border border-[#D6D3D1] rounded-lg px-3 py-2 text-sm outline-none bg-[#F5F5F5]'
         />
+
         {error && (
           <p className='text-red-500 text-sm mt-1'>
             Please enter a valid phone number

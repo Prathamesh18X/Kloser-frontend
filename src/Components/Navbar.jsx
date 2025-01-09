@@ -1,8 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Input, Button, Chip } from '@nextui-org/react';
-// import sun from '../../public/assets/sun.svg';
-// import moon from '../../public/assets/moon.svg';
 import cart from '../../public/assets/cart.svg';
 import fullLogo from '../../public/assets/kloserFullLogo.svg';
 import halfLogo from '../../public/assets/kLogo.svg';
@@ -32,22 +30,11 @@ const Navbar = () => {
     setSearchText(search);
     setShowDropdown(false);
   };
-  // const [darkMode, setDarkMode] = useState(false);
-
-  // const enableLightMode = () => {
-  //   setDarkMode(false);
-  //   document.documentElement.classList.remove("dark");
-  // };
-
-  // const enableDarkMode = () => {
-  //   setDarkMode(true);
-  //   document.documentElement.classList.add("dark");
-  // };
 
   return (
-    <nav className='container mx-auto text-white w-full top-0 z-50 bg-default'>
-      <div className='mx-auto flex items-center justify-between pb-2 py-4 px-16'>
-        <div className='flex items-center space-x-4'>
+    <nav className='container mx-auto text-white w-full sticky top-0 z-50 bg-default'>
+      <div className='mx-auto flex items-center justify-between pb-5 py-4 px-20'>
+        <div className='flex items-center space-x-6'>
           <Link to='/' className='text-2xl font-bold text-black '>
             {isMobile ? (
               <Button
@@ -61,34 +48,9 @@ const Navbar = () => {
               <img src={fullLogo} alt='Kloser Logo' className='h-10' />
             )}
           </Link>
-
-          {/* {!isMobile && (
-            <div className='flex items-center space-x-4'>
-              <Button
-                isIconOnly
-                auto
-                light
-                className='rounded-lg flex items-center justify-center w-8 h-8 hover:bg-gray-300'
-                // onClick={enableLightMode}
-                aria-label='Enable Light Mode'
-              >
-                <img src={sun} alt='sun' />
-              </Button>
-              <Button
-                isIconOnly
-                auto
-                light
-                className='rounded-lg flex items-center justify-center w-8 h-8 hover:bg-gray-300'
-                // onClick={enableDarkMode}
-                aria-label='Enable Dark Mode'
-              >
-                <img src={moon} alt='moon' />
-              </Button>
-            </div>
-          )} */}
         </div>
 
-        <div className='relative w-[400px]  h-[40px] max-w-lg mx-auto'>
+        <div className='relative w-[400px] h-[40px] max-w-lg mx-auto'>
           <Input
             clearable
             value={searchText}
@@ -105,12 +67,11 @@ const Navbar = () => {
             <div
               className='absolute justify-evenly mt-2 bg-default border shadow-lg rounded-lg z-50'
               style={{
-                width: '500px', // Keep the dropdown width as is
-                left: '50%', // Move dropdown to the center horizontally
-                transform: 'translateX(-50%)', // Center-align dropdown relative to the parent
+                width: '500px',
+                left: '50%',
+                transform: 'translateX(-50%)',
               }}
             >
-              {/* Recent Searches Section */}
               <div className='px-4 py-2'>
                 <div className='flex justify-between items-center'>
                   <h4 className='text-sm font-bold text-gray-700'>
@@ -122,7 +83,7 @@ const Navbar = () => {
                     color='white'
                     onClick={handleClearSearches}
                     size='sm'
-                    className=' text-gray-600 hover:underline'
+                    className='text-gray-600 hover:underline'
                   >
                     Clear
                   </Button>
@@ -137,23 +98,19 @@ const Navbar = () => {
                       onClick={() => handleSelectSearch(search)}
                       onClose={() => handleSelectSearch(search)}
                     >
-                      <span className=' text-gray-600 text-sm'>{search}</span>{' '}
-                      {/* <span>
-                        <CloseRoundedIcon className="text-gray-600" />
-                      </span> */}
+                      <span className='text-gray-600 text-sm'>{search}</span>
                     </Chip>
                   ))}
                 </div>
               </div>
 
-              {/* Trending Tags Section */}
               <div className='px-4 py-2 border-t'>
                 <h4 className='text-sm font-bold text-gray-700'>Trending</h4>
                 <div className='flex flex-wrap mt-2 gap-4'>
                   {trendingTags.map((tag, index) => (
                     <div
                       key={index}
-                      className='flex  items-center justify-center w-[full] p-1 border rounded-lg cursor-pointer hover:shadow-lg'
+                      className='flex items-center justify-center w-[full] p-1 border rounded-lg cursor-pointer hover:shadow-lg'
                       onClick={() => handleSelectSearch(tag.title)}
                     >
                       <img

@@ -19,8 +19,8 @@ const PaymentQRCode = ({ qrCodeUrl, onCancelTransaction }) => {
   };
 
   return (
-    <div className='w-[460px] h-screen bg-default shadow-lg fixed top-0 right-0 z-50 overflow-y-auto flex flex-col items-center justify-between'>
-      <div className='text-center px-6 pt-8 mt-8 flex flex-col items-center justify-center'>
+    <div className='w-[480px] h-screen bg-default shadow-lg fixed top-0 fixed top-[65.5px] right-0 z-50 overflow-y-auto flex flex-col items-center justify-between'>
+      <div className='text-center px-6 pt-10 mt-10 flex flex-col items-center justify-center'>
         <h2 className='text-[18px] font-medium leading-[25.2px] text-[#1C1917]'>
           Pay Securely with DuitNow QR
         </h2>
@@ -36,13 +36,10 @@ const PaymentQRCode = ({ qrCodeUrl, onCancelTransaction }) => {
 
         <div className='flex flex-col justify-center items-center mb-6 mt-4'>
           <img
-            src={qrCodeUrl}
+            src='../../public/assets/QR code.png'
             alt='QR Code for Payment'
-            className='w-[200px] h-[200px] border-4 border-pink-500 rounded-lg'
+            className='w-[200px] h-[200px] '
           />
-          <p className='text-[14px] font-medium text-[#78716C] text-center mt-2'>
-            MALAYSIA NATIONAL QR
-          </p>
         </div>
       </div>
 

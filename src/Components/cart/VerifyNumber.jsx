@@ -42,7 +42,7 @@ const VerifyNumber = ({ totalAmount, phoneNumber, onNext }) => {
   };
 
   return (
-    <div className='w-[460px] h-screen bg-default shadow-lg fixed top-0 right-0 z-50 flex flex-col justify-between'>
+    <div className='w-[480px] h-screen bg-default shadow-lg fixed top-[65.5px] right-0 z-50 overflow-y-auto flex flex-col justify-between'>
       <div className='flex justify-between items-center px-6 py-4 '>
         <div className='flex items-center'>
           <button className='text-gray-600 text-xl'>
@@ -99,7 +99,7 @@ const VerifyNumber = ({ totalAmount, phoneNumber, onNext }) => {
         </div>
       </div>
 
-      <div className='flex-1 flex flex-col justify-center px-6'>
+      <div className='flex-1 flex flex-col justify-center px-8'>
         <div className='flex justify-between items-center text-[14px] font-medium leading-[19.6px] text-[#1C1917] font-inter'>
           <p className='text-left'>
             Enter OTP sent to{' '}
@@ -146,7 +146,7 @@ const VerifyNumber = ({ totalAmount, phoneNumber, onNext }) => {
               value={value}
               maxLength='1'
               onChange={(e) => handleOtpChange(e.target.value, index)}
-              className='w-[92px] h-[52px] text-center border border-[#D6D3D1] rounded-[8px] text-[16px] font-medium text-black focus:ring-2 focus:ring-[#BAE6FD] focus:outline-none focus:shadow-[0px_24px_40px_-16px_rgba(104,75,37,0.08),_0px_4px_6px_0px_rgba(95,74,46,0.04),_0px_1px_2px_0px_rgba(95,74,46,0.08)]'
+              className='w-[94px] h-[50px] text-center border border-[#D6D3D1] rounded-[8px] text-[16px] font-medium text-black focus:ring-2 focus:ring-[#BAE6FD] focus:outline-none focus:shadow-[0px_24px_40px_-16px_rgba(104,75,37,0.08),_0px_4px_6px_0px_rgba(95,74,46,0.04),_0px_1px_2px_0px_rgba(95,74,46,0.08)]'
             />
           ))}
         </div>

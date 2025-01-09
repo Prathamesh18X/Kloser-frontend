@@ -13,7 +13,6 @@ const ShoppingCartItem = ({ item }) => {
         />
         <div>
           <h3 className='text-sm font-medium text-[#1C1917]'>{item.name}</h3>
-
           <div className='flex items-center gap-2 mt-5 '>
             <button className='text-gray-500 text-sm'>
               <svg
@@ -163,7 +162,7 @@ const YouMightLikeItem = ({ item }) => {
 
 const ShoppingSummary = ({ items, total, onCheckout, allitems }) => {
   return (
-    <div className='w-[460px] h-screen bg-default fixed top-[65.5px] right-0 z-50 overflow-y-auto'>
+    <div className='w-[480px] h-screen bg-default fixed top-[65.5px] right-0 z-50 overflow-y-auto'>
       <div className='p-7 border-gray-200'>
         <h2 className='text-left text-[#78716C] font-inter font-medium text-[16px] leading-[22.4px] md:text-[18px] md:leading-[25.2px]'>
           Shopping summary

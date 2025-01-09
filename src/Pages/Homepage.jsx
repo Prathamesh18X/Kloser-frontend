@@ -51,7 +51,7 @@ const Homepage = () => {
           >
             <CardHeader className='flex items-center space-x-4'>
               <img src={star} alt='star' />
-              <h2 className='text-sm font-bold text-black'>Store Name</h2>
+              <h2 className='text-sm font-bold text-black'>Oroh Shoes</h2>
             </CardHeader>
 
             <div className=' text-gray-600 md:py-6 px-4'>

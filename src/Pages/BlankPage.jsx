@@ -9,7 +9,7 @@ import DeliverySelection from '../Components/cart/DeliverySelection';
 import PaymentQRCode from '../Components/cart/PaymentQRCode';
 import Navbar from '../Components/Navbar';
 const App = () => {
-  const [currentStep, setCurrentStep] = useState(1);
+  const [currentStep, setCurrentStep] = useState(2);
 
   const items = [
     {

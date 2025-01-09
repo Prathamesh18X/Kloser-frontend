@@ -73,7 +73,7 @@ const AddNewAddress2 = ({ onNext }) => {
   };
 
   return (
-    <div className='w-[460px] h-screen bg-default shadow-lg fixed top-0   right-0 z-50 overflow-y-auto'>
+    <div className='w-[480px] h-screen bg-default shadow-lg fixed top-[65.5px] right-0 z-50 overflow-y-auto'>
       {/* Header */}
       <div className='flex justify-between items-center px-6 py-4 '>
         <div className='flex items-center'>
@@ -136,13 +136,12 @@ const AddNewAddress2 = ({ onNext }) => {
           <label className='block text-[14px] font-medium leading-[19.6px] text-[#1C1917] font-inter'>
             Phone number
           </label>
-          <PhoneInput
-            country={'my'}
+          <input
+            type='tel'
             value={phoneNumber}
-            onChange={setPhoneNumber}
-            inputClass='w-full border border-[#D6D3D1] rounded-lg px-3 py-2 text-sm outline-none bg-[#F5F5F5]'
-            containerClass='mb-2'
+            onChange={(e) => setPhoneNumber(e.target.value)}
             placeholder='Enter phone number'
+            className='w-full border border-[#D6D3D1] rounded-lg px-3 py-2 text-sm outline-none bg-[#F5F5F5]'
           />
         </div>
 
