@@ -16,6 +16,7 @@ import AddShoppingCartRoundedIcon from '@mui/icons-material/AddShoppingCartRound
 import incrementBtn from '../../public/assets/incrementBtn.svg';
 import decrementBtn from '../../public/assets/decrementBtn.svg';
 import { useNavigate } from 'react-router-dom';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 const ProductPage = () => {
   const { isMobile } = useScreenSize();
@@ -37,32 +38,63 @@ const ProductPage = () => {
 
           <div className='flex h-full'>
             {/* Small Images */}
-            <div className='flex justify-start gap-2 justify-between h-[75px] w-[30%] p-2'>
-              <Card shadow='sm' className=' w-full overflow-hidden'>
-                <Image
-                  removeWrapper
-                  src='https://images.unsplash.com/photo-1732209988927-396f5103ede8?q=80&w=1933&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-                  alt='Small Image 1'
-                  className='object-cover  w-full h-full'
-                />
-              </Card>
-              <Card shadow='sm' className=' w-full overflow-hidden'>
-                <Image
-                  removeWrapper
-                  src='https://images.unsplash.com/photo-1732209988927-396f5103ede8?q=80&w=1933&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-                  alt='Small Image 2'
-                  className='object-cover w-full h-full'
-                />
-              </Card>
-              <Card shadow='sm' className='w-full overflow-hidden'>
-                <Image
-                  removeWrapper
-                  src='https://images.unsplash.com/photo-1732209988927-396f5103ede8?q=80&w=1933&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D '
-                  alt='Small Image 3'
-                  className='object-cover w-full h-full'
-                />
-              </Card>
-            </div>
+            <Swiper
+              spaceBetween={20} // Space between slides
+              slidesPerView={3} // Number of visible slides
+              className='h-[200px] w-full' // Adjust height as needed
+            >
+              <SwiperSlide>
+                <Card shadow='sm' className='overflow-hidden rounded-lg'>
+                  <Image
+                    removeWrapper
+                    src='https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=1933&auto=format&fit=crop&ixlib=rb-4.0.3'
+                    alt='Product 1'
+                    className='object-cover w-full h-full rounded-lg'
+                  />
+                </Card>
+              </SwiperSlide>
+              <SwiperSlide>
+                <Card shadow='sm' className='overflow-hidden rounded-lg'>
+                  <Image
+                    removeWrapper
+                    src='https://images.unsplash.com/photo-1522337660859-02fbefca4702?q=80&w=1933&auto=format&fit=crop&ixlib=rb-4.0.3'
+                    alt='Product 2'
+                    className='object-cover w-full h-full rounded-lg'
+                  />
+                </Card>
+              </SwiperSlide>
+              <SwiperSlide>
+                <Card shadow='sm' className='overflow-hidden rounded-lg'>
+                  <Image
+                    removeWrapper
+                    src='https://images.unsplash.com/photo-1590080871814-44c258a2c217?q=80&w=1933&auto=format&fit=crop&ixlib=rb-4.0.3'
+                    alt='Product 3'
+                    className='object-cover w-full h-full rounded-lg'
+                  />
+                </Card>
+              </SwiperSlide>
+              <SwiperSlide>
+                <Card shadow='sm' className='overflow-hidden rounded-lg'>
+                  <Image
+                    removeWrapper
+                    src='https://images.unsplash.com/photo-1590080871814-44c258a2c217?q=80&w=1933&auto=format&fit=crop&ixlib=rb-4.0.3'
+                    alt='Product 3'
+                    className='object-cover w-full h-full rounded-lg'
+                  />
+                </Card>
+              </SwiperSlide>
+              <SwiperSlide>
+                <Card shadow='sm' className='overflow-hidden rounded-lg'>
+                  <Image
+                    removeWrapper
+                    src='https://images.unsplash.com/photo-1590080871814-44c258a2c217?q=80&w=1933&auto=format&fit=crop&ixlib=rb-4.0.3'
+                    alt='Product 3'
+                    className='object-cover w-full h-full rounded-lg'
+                  />
+                </Card>
+              </SwiperSlide>
+            </Swiper>
+
             {/* Main Product Image Card */}
             <div className='flex-[0.8] relative'>
               <Card shadow='md' className='relative overflow-hidden h-full'>

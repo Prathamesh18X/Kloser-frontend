@@ -27,9 +27,11 @@ const MainLayout = ({ children }) => {
   }, [setMobile, setTablet, setDesktop]);
 
   return (
-    <div className='container mx-auto flex flex-col min-h-screen bg-default'>
+    <div className=' mx-auto flex flex-col min-h-screen bg-default'>
       <Navbar />
-      <main className='flex-grow w-full px-4 sm:px-10 md:px-14'>{children}</main>
+      <main className='flex-grow w-full px-4 sm:px-10 md:px-14'>
+        {children}
+      </main>
       <Footer />
     </div>
   );

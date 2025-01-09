@@ -4,7 +4,7 @@ import 'swiper/css/navigation';
 
 const ShoppingCartItem = ({ item }) => {
   return (
-    <div className='flex items-center bg-red justify-between py-4 border-b border-gray-200'>
+    <div className='flex items-center bg-red justify-between  py-4 border-b border-gray-200'>
       <div className='flex items-center gap-4 mb-3'>
         <img
           src={item.image}
@@ -163,7 +163,7 @@ const YouMightLikeItem = ({ item }) => {
 
 const ShoppingSummary = ({ items, total, onCheckout, allitems }) => {
   return (
-    <div className='w-[460px] h-screen bg-default fixed top-0 right-0 z-50 overflow-y-auto'>
+    <div className='w-[460px] h-screen bg-default fixed top-[65.5px] right-0 z-50 overflow-y-auto'>
       <div className='p-7 border-gray-200'>
         <h2 className='text-left text-[#78716C] font-inter font-medium text-[16px] leading-[22.4px] md:text-[18px] md:leading-[25.2px]'>
           Shopping summary

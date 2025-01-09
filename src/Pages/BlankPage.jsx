@@ -7,9 +7,9 @@ import VerifyNumber from '../Components/cart/VerifyNumber';
 import Checkout from '../Components/cart/Checkout';
 import DeliverySelection from '../Components/cart/DeliverySelection';
 import PaymentQRCode from '../Components/cart/PaymentQRCode';
-
+import Navbar from '../Components/Navbar';
 const App = () => {
-  const [currentStep, setCurrentStep] = useState(4);
+  const [currentStep, setCurrentStep] = useState(1);
 
   const items = [
     {
@@ -199,50 +199,55 @@ const App = () => {
 
   return (
     <div>
-      {currentStep === 1 && (
-        <ShoppingSummary
-          items={items}
-          allitems={allitems}
-          total={total}
-          onCheckout={handleNextStep}
-        />
+      {currentStep > 0 && (
+        <div className='fixed inset-0 bg-black bg-opacity-50 z-40'></div>
       )}
-      {currentStep === 2 && (
-        <AddNewAddress totalAmount='598.60' onNext={handleNextStep} />
-      )}
-      {currentStep === 3 && (
-        <VerifyNumber
-          totalAmount='598.60'
-          phoneNumber='601234123410'
-          onNext={handleNextStep}
-        />
-      )}
-      {currentStep === 4 && <AddNewAddress2 onNext={handleNextStep} />}
-      {currentStep === 5 && (
-        <Checkout
-          totalAmount='598.60'
-          deliveryDetails={deliveryDetails}
-          onChangeDelivery={handleChangeDelivery} // Pass handler for "Change" button
-          onPayWith={handlePayWith} // Pass handler for "PAY WITH" button
-        />
-      )}
-      {currentStep === 6 && (
-        <DeliverySelection
-          totalAmount='598.60'
-          deliveryDetails={deliveryDetails2}
-          selectedAddress={0}
-          onSelectAddress={(index) =>
-            console.log('Selected Address Index:', index)
-          }
-          onProceedToPay={handleNextStep}
-        />
-      )}
-      {currentStep === 7 && (
-        <PaymentQRCode
-          qrCodeUrl='https://via.placeholder.com/256x256.png?text=QR+Code'
-          onCancelTransaction={handleCancelTransaction}
-        />
-      )}
+      <div className='fixed inset-0 z-50 flex justify-center items-center'>
+        {currentStep === 1 && (
+          <ShoppingSummary
+            items={items}
+            allitems={allitems}
+            total={total}
+            onCheckout={handleNextStep}
+          />
+        )}
+        {currentStep === 2 && (
+          <AddNewAddress totalAmount='598.60' onNext={handleNextStep} />
+        )}
+        {currentStep === 3 && (
+          <VerifyNumber
+            totalAmount='598.60'
+            phoneNumber='601234123410'
+            onNext={handleNextStep}
+          />
+        )}
+        {currentStep === 4 && <AddNewAddress2 onNext={handleNextStep} />}
+        {currentStep === 5 && (
+          <Checkout
+            totalAmount='598.60'
+            deliveryDetails={deliveryDetails}
+            onChangeDelivery={handleChangeDelivery} // Pass handler for "Change" button
+            onPayWith={handlePayWith} // Pass handler for "PAY WITH" button
+          />
+        )}
+        {currentStep === 6 && (
+          <DeliverySelection
+            totalAmount='598.60'
+            deliveryDetails={deliveryDetails2}
+            selectedAddress={0}
+            onSelectAddress={(index) =>
+              console.log('Selected Address Index:', index)
+            }
+            onProceedToPay={handleNextStep}
+          />
+        )}
+        {currentStep === 7 && (
+          <PaymentQRCode
+            qrCodeUrl='https://via.placeholder.com/256x256.png?text=QR+Code'
+            onCancelTransaction={handleCancelTransaction}
+          />
+        )}
+      </div>
     </div>
   );
 };

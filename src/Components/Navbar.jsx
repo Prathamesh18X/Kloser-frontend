@@ -46,7 +46,7 @@ const Navbar = () => {
 
   return (
     <nav className='container mx-auto text-white w-full top-0 z-50 bg-default'>
-      <div className='mx-auto flex items-center justify-between pb-0 py-4 px-16'>
+      <div className='mx-auto flex items-center justify-between pb-2 py-4 px-16'>
         <div className='flex items-center space-x-4'>
           <Link to='/' className='text-2xl font-bold text-black '>
             {isMobile ? (
