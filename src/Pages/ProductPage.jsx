@@ -360,107 +360,83 @@ const ProductPage = () => {
       <div className='flex-[0.35] h-full sticky top-8'>
         <Card
           shadow='md'
-          className='bg-[#E7E5E4] flex flex-col justify-between h-auto p-6'
+          className='bg-[#E7E5E4] rounded-md p-6 w-full max-w-lg mx-auto'
         >
           {/* Breadcrumbs */}
-          <CardHeader className='flex-col items-start mb-4'>
-            <Breadcrumbs
-              className='text-sm text-gray-500'
-              itemClasses={{
-                separator: 'px-1',
-              }}
-              separator='/'
-            >
-              <BreadcrumbItem>Home</BreadcrumbItem>
-              <BreadcrumbItem>{selectedProduct?.headerTitle}</BreadcrumbItem>
-            </Breadcrumbs>
-          </CardHeader>
+          <div className='text-sm text-gray-500 mb-4'>
+            <a href='#' className='hover:underline'>
+              Home
+            </a>{' '}
+            /{' '}
+            <span className='text-gray-800 font-semibold'>
+              {selectedProduct?.headerTitle || 'Gentle Cleanser'}
+            </span>
+          </div>
 
           {/* Product Details */}
           <div>
-            <h1 className='text-3xl font-bold mb-2'>
-              {selectedProduct?.headerSubtitle}
+            <h1 className='text-2xl font-bold text-gray-800'>
+              Gentle Cleanser
             </h1>
-            <p className='text-gray-500 text-sm uppercase font-medium mb-4'>
+            <p className='text-gray-500 text-sm font-medium mb-4'>
               A Soothing & Conditioning Cleanser (120ml / 4FL. OZ.)
             </p>
-            <div className='flex items-center mb-4'>
-              <span className='line-through text-gray-400 text-lg mr-4'>
+            <div className='flex items-center'>
+              <span className='line-through text-gray-400 text-lg mr-2'>
                 RM199.50
               </span>
-              <span className='text-xl font-semibold text-gray-500'>
-                RM99.00 | Net Wt. 4fl. oz.(120ml)
+              <span className='text-xl font-semibold text-gray-800'>
+                RM99.00
+              </span>
+              <span className='text-black ml-2 font-semibold  text-md'>
+                | Net Wt. 4fl. oz.(120ml)
               </span>
             </div>
-            <p className='text-sm font-medium text-black mb-6'>
+            <p className='text-sm text-gray-600 mb-6'>
               Tax included. Shipping calculated at checkout.
             </p>
 
             {/* Quantity Selector */}
-            <div className='flex items-center mb-6'>
-              <ButtonGroup>
-                <Button
-                  asChild
-                  variant='light'
-                  isIconOnly
-                  disableRipple
-                  disableAnimation
-                  size='sm'
-                  auto
-                  data-hover={false}
-                >
-                  <img src={decrementBtn} alt='Decrement' />
-                </Button>
-                <Button
-                  isIconOnly
-                  data-hover={false}
-                  variant='light'
-                  size='sm'
-                  auto
-                >
-                  <span className='text-lg font-semibold'>1</span>
-                </Button>
-
-                <Button
-                  asChild
-                  variant='light'
-                  isIconOnly
-                  disableRipple
-                  disableAnimation
-                  size='sm'
-                  auto
-                  data-hover={false}
-                >
-                  <img src={incrementBtn} alt='Increment' />
-                </Button>
-              </ButtonGroup>
+            <div className='flex items-center gap-4 mb-6'>
+              <button
+                className='w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-200'
+                // onClick={handleDecrement}
+              >
+                <img src={decrementBtn} alt='Decrement' />
+              </button>
+              <span className='text-lg font-semibold'>{1}</span>
+              <button
+                className='w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-200'
+                // onClick={handleIncrement}
+              >
+                <img src={incrementBtn} alt='Increment' />
+              </button>
             </div>
 
             {/* Add to Cart Button */}
-            <Button
-              className='bg-black text-white hover:bg-gray-800 w-full'
-              size='md'
-              radius='none'
-              icon={<AddShoppingCartRoundedIcon />}
-              onClick={() => setCurrentStep(currentStep + 1)}
+            <button
+              className='bg-black text-white text-sm font-semibold py-2 px-4 w-[40%] hover:bg-gray-800'
+              // onClick={handleAddToCart}
             >
               ADD TO CART
-            </Button>
+            </button>
 
             {/* Product Description */}
-            <p className='text-gray-600 mt-6'>
-              Youthful skin is just a few suds away, suitable for normal to dry
-              skin types. Our Gentle Cleanser combines the power of Japanese
-              Yuzu Extract and Grape Leaf Extract to help promote anti-aging and
-              brighten complexion. It is perfect to also effectively help
-              cleanse impurities built-up on skin such as makeup, dirt, while
-              leaving you with supple, baby-soft skin.
-            </p>
-            <ul className='list-disc pl-6 mt-4 text-gray-600 text-sm'>
-              <li>Brightening Complexion & Anti-Aging.</li>
-              <li>Gentle Cleansing.</li>
-              <li>Skin Revitalization.</li>
-            </ul>
+            <div className='mt-6 text-gray-600 text-sm'>
+              <p className='mb-4'>
+                Youthful skin is just a few suds away, suitable for normal to
+                dry skin types. Our Gentle Cleanser combines the power of
+                Japanese Yuzu Extract and Grape Leaf Extract to help promote
+                anti-aging and brighten complexion. It is perfect to also
+                effectively help cleanse impurities built-up on skin such as
+                makeup, dirt, while leaving you with supple, baby-soft skin.
+              </p>
+              <ul className='list-disc pl-5 space-y-0'>
+                <li>Brightening Complexion & Anti-Aging.</li>
+                <li>Gentle Cleansing.</li>
+                <li>Skin Revitalization.</li>
+              </ul>
+            </div>
           </div>
         </Card>
       </div>
