@@ -43,24 +43,25 @@ const Homepage = () => {
       <div className=' mx-auto py-6 text-center'>
         <div className='sm:flex h-[360px] justify-between items-center bg-gray-100 sm:py-10 sm:px-6 md:py-6 md:px-4  gap-6'>
           <Card
-            className='bg-[#E7E5E4] shadow-md p-4 rounded-lg flex justify-between  sm:mb-0 mb-6'
+            className='bg-[#E7E5E4] p-4 flex justify-between  sm:mb-0 mb-6'
             style={{
               width: `${isMobile ? '100%' : '270px'}`,
               height: `${isMobile ? '100%' : '360px'}`,
             }}
           >
-            <CardHeader className='flex items-center space-x-4'>
-              <img src={star} alt='star' />
-              <h2 className='text-sm font-bold text-black'>Oroh Shoes</h2>
+            <CardHeader className='flex-col justify-start'>
+              <div className='flex w-full items-center  space-x-4'>
+                <img src={star} alt='star' />
+                <h2 className='text-sm font-bold text-black'>Oroh Shoes</h2>
+              </div>
+              <div className=' text-black md:py-6'>
+                <p className='text-sm font-semibold text-left'>
+                  Store Name is your shopping destination for fashion, home,
+                  beauty, kids&apos; clothes and more. Browse the latest
+                  collections and find quality pieces at affordable
+                </p>
+              </div>
             </CardHeader>
-
-            <div className=' text-gray-600 md:py-6 px-4'>
-              <p className='text-sm text-left'>
-                Store Name is your shopping destination for fashion, home,
-                beauty, kids&apos; clothes and more. Browse the latest
-                collections and find quality pieces at affordable
-              </p>
-            </div>
 
             <CardFooter className='p-0 flex justify-start md:mt-6'>
               <Button
@@ -105,14 +106,14 @@ const Homepage = () => {
               }}
             >
               {carouselItems.map((item, index) => (
-                <div key={index}>
-                  <Card className='relative shadow-md overflow-hidden'>
+                <div key={index} className=''>
+                  <Card className='relative h-[370px] max-w-[full] overflow-hidden'>
                     <CardHeader className='absolute text-left z-10 top-2 left-2 flex-col items-start'>
-                      <h4 className='text-white font-medium text-2xl w-[70%]'>
+                      <h4 className='text-white font-serif font-light text-5xl w-[70%]'>
                         {item.title}
                       </h4>
                     </CardHeader>
-                    <div className='max-h-[370px] max-w-[full]'>
+                    <div className=''>
                       <Image
                         removeWrapper
                         alt='Card background'
@@ -128,7 +129,7 @@ const Homepage = () => {
             </Carousel>
           </div>
 
-          <Card className={` relative shadow-md overflow-hidden `}>
+          <Card className={` relativeoverflow-hidden `}>
             <CardHeader className='absolute z-10 top-2 left-2 flex-col items-start'>
               <span className='text-tiny text-white/60 uppercase font-bold'>
                 {`heading`}
@@ -145,7 +146,7 @@ const Homepage = () => {
                 alt='Card background'
                 className='z-0 w-full h-auto object-cover'
                 src={
-                  'https://images.unsplash.com/photo-1731570338144-8439b3c94a55?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+                  'https://images.unsplash.com/photo-1512374382149-233c42b6a83b?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
                 }
                 width={500}
                 height={370}
@@ -230,7 +231,7 @@ const Homepage = () => {
         {cardData.map((card) => (
           <div key={card.id}>
             <Card
-              className='relative shadow-md overflow-hidden'
+              className='relative overflow-hidden'
               isPressable={true}
               onPress={() => {
                 setSelectedProduct(card);

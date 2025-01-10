@@ -13,7 +13,7 @@ const carouselItems = [
   {
     title: 'Explore Exclusive Collections',
     image:
-      'https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1999&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      'https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=2012&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
   },
 ];
 const cardData = [
@@ -23,7 +23,7 @@ const cardData = [
     headerTitle: "Oroh Shoes",
     description: "Know someone who loves to travel in style? Tag them below and let them be inspired.",
     imageUrl: "https://i.pinimg.com/736x/6b/10/f7/6b10f7c5b48ffbe5ae04627db55bf3da.jpg",
-    imageSize: { width: 400, height: 290 },
+    imageSize: { width: 400, height: 300 },
     buttonText: "RM83.00",
   },
   {
@@ -32,7 +32,7 @@ const cardData = [
     headerTitle: "Oroh Shoes",
     description: "Step up your travel game with these stylish shoes. Perfect for any explorer!",
     imageUrl: "https://i.pinimg.com/736x/1c/17/78/1c1778c1c064e47f5dbf07f8834d8e2b.jpg",
-    imageSize: { width: 400, height: 310 },
+    imageSize: { width: 400, height: 170 },
     buttonText: "RM79.20",
   },
   {
@@ -41,7 +41,7 @@ const cardData = [
     headerTitle: "Oroh Shoes",
     description: "Comfort and elegance for those who roam. Grab yours now!",
     imageUrl: "https://i.pinimg.com/736x/f7/7e/9f/f77e9ff496cf48819349fffe7ee30b85.jpg",
-    imageSize: { width: 400, height: 270 },
+    imageSize: { width: 400, height: 350 },
     buttonText: "RM85.90",
   },
   {
@@ -50,7 +50,7 @@ const cardData = [
     headerTitle: "Oroh Shoes",
     description: "Designed for explorers with a keen sense of style. Make them yours!",
     imageUrl: "https://i.pinimg.com/736x/ab/75/fa/ab75fa8792904597f43c764090948ea6.jpg",
-    imageSize: { width: 400, height: 300 },
+    imageSize: { width: 400, height: 200 },
     buttonText: "RM77.50",
   },
   {
@@ -59,7 +59,7 @@ const cardData = [
     headerTitle: "Oroh Shoes",
     description: "Travel in style with Oroh Shoes. Perfect for any adventure.",
     imageUrl: "https://i.pinimg.com/736x/8f/a6/63/8fa663204bc2ae5b292539c20e9c836e.jpg",
-    imageSize: { width: 400, height: 250 },
+    imageSize: { width: 400, height: 300 },
     buttonText: "RM82.10",
   },
   {
@@ -68,7 +68,7 @@ const cardData = [
     headerTitle: "Oroh Shoes",
     description: "Of Spanish passion and Indian vibrance. Redefine festive styling with Oroh's festive collection.",
     imageUrl: "https://i.pinimg.com/736x/1e/6e/e4/1e6ee4f9bdbcdadb0f1d870367486732.jpg",
-    imageSize: { width: 400, height: 320 },
+    imageSize: { width: 400, height: 300 },
     buttonText: "RM90.00",
   },
   {
@@ -77,7 +77,7 @@ const cardData = [
     headerTitle: "Oroh Shoes",
     description: "Leather that’s a cut above the rest. Let us know which color of Jerez steals your heart!",
     imageUrl: "https://i.pinimg.com/736x/7c/0d/1d/7c0d1dc02a52bde4f03ef63f4140c72c.jpg",
-    imageSize: { width: 400, height: 280 },
+    imageSize: { width: 400, height: 300 },
     buttonText: "RM88.80",
   },
   {
@@ -95,7 +95,7 @@ const cardData = [
     headerTitle: "The Oroh Life",
     description: "The golden rule of fashion? Black and gold never go out of style.",
     imageUrl: "https://i.pinimg.com/736x/93/c5/80/93c580985edb194e30488337c4decdcc.jpg",
-    imageSize: { width: 400, height: 290 },
+    imageSize: { width: 400, height: 310 },
     buttonText: "RM84.30",
   },
   {
@@ -104,7 +104,7 @@ const cardData = [
     headerTitle: "Oroh Shoes",
     description: "Indulge in the fine shoe craft, envisioned in Spain and crafted in India. Explore now!",
     imageUrl: "https://i.pinimg.com/736x/a3/dd/7b/a3dd7bf6c442787583ac5e97d3635e2c.jpg",
-    imageSize: { width: 400, height: 260 },
+    imageSize: { width: 400, height: 320 },
     buttonText: "RM89.00",
   },
   {
@@ -113,7 +113,7 @@ const cardData = [
     headerTitle: "Oroh Shoes",
     description: "Know someone who loves to travel in style? Tag them below and let them be inspired.",
     imageUrl: "https://i.pinimg.com/736x/6b/10/f7/6b10f7c5b48ffbe5ae04627db55bf3da.jpg",
-    imageSize: { width: 400, height: 290 },
+    imageSize: { width: 400, height: 320 },
     buttonText: "RM83.00",
   },
   {
@@ -122,7 +122,7 @@ const cardData = [
     headerTitle: "Oroh Shoes",
     description: "Step up your travel game with these stylish shoes. Perfect for any explorer!",
     imageUrl: "https://i.pinimg.com/736x/1c/17/78/1c1778c1c064e47f5dbf07f8834d8e2b.jpg",
-    imageSize: { width: 400, height: 310 },
+    imageSize: { width: 400, height: 320 },
     buttonText: "RM79.20",
   },
   {
@@ -131,7 +131,7 @@ const cardData = [
     headerTitle: "Oroh Shoes",
     description: "Comfort and elegance for those who roam. Grab yours now!",
     imageUrl: "https://i.pinimg.com/736x/f7/7e/9f/f77e9ff496cf48819349fffe7ee30b85.jpg",
-    imageSize: { width: 400, height: 270 },
+    imageSize: { width: 400, height: 320 },
     buttonText: "RM85.90",
   },
   {

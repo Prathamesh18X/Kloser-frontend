@@ -32,8 +32,8 @@ const Navbar = () => {
   };
 
   return (
-    <nav className='container mx-auto text-white w-full sticky top-0 z-50 bg-default'>
-      <div className='mx-auto flex items-center justify-between pb-5 py-4 px-20'>
+    <nav className=' mx-auto text-white w-full z-40 top-0 bg-default'>
+      <div className=' container mx-auto flex items-center justify-between pb-5 py-4 px-20'>
         <div className='flex items-center space-x-6'>
           <Link to='/' className='text-2xl font-bold text-black '>
             {isMobile ? (
@@ -60,20 +60,16 @@ const Navbar = () => {
             }`}
             onFocus={() => setShowDropdown(true)}
             onBlur={() => setTimeout(() => setShowDropdown(false), 200)}
-            className='w-full bg-gray-50 text-black focus:outline-none rounded-lg'
+            className='w-full bg-gray-50 text-black focus:outline-none rounded-md'
             size='md'
             classNames={{
               innerWrapper: 'bg-transparent',
               inputWrapper: [
-                // 'shadow-xl',
                 'bg-[#E7E5E4]',
-                // 'dark:bg-default/60',
                 'backdrop-blur-xl',
                 'backdrop-saturate-200',
                 'hover:bg-default-400/70',
                 'focus-within:!bg-default-200/50',
-                'dark:hover:bg-default/70',
-                'dark:focus-within:!bg-default/60',
                 '!cursor-text',
               ],
             }}

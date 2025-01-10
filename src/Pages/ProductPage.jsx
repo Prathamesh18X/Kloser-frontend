@@ -221,10 +221,10 @@ const ProductPage = () => {
   };
 
   return (
-    <div className='flex w-full h-[100vh] gap-4 px-6 py-8 '>
+    <div className='flex w-full sticky h-screen gap-4  '>
       {/* Left Section: Main Image + Small Images */}
-      <div className='flex-[0.65] h-full overflow-hidden overflow-y-scroll scrollbar-none custom-scrollbar pr-6'>
-        <div className='flex flex-col gap-4 '>
+      <div className='flex-[0.65] h-full overflow-hidden overflow-y-scroll scrollbar-none custom-scrollbar'>
+        <div className='flex flex-col px-4 gap-4 '>
           {/* Back Button */}
 
           <div className=' relative flex'>
@@ -244,7 +244,7 @@ const ProductPage = () => {
                 className='mt-auto flex gap-2'
               >
                 <SwiperSlide>
-                  <Card shadow='sm' className='h-[86px] w-[86px]'>
+                  <Card shadow='sm' className='h-[80px] w-[80px]'>
                     <Image
                       removeWrapper
                       src='https://i.pinimg.com/736x/1e/6e/e4/1e6ee4f9bdbcdadb0f1d870367486732.jpg'
@@ -254,7 +254,7 @@ const ProductPage = () => {
                   </Card>
                 </SwiperSlide>
                 <SwiperSlide>
-                  <Card shadow='sm' className='h-[86px] w-[86px]'>
+                  <Card shadow='sm' className='h-[80px] w-[80px]'>
                     <Image
                       removeWrapper
                       src='https://i.pinimg.com/736x/7c/0d/1d/7c0d1dc02a52bde4f03ef63f4140c72c.jpg'
@@ -265,7 +265,7 @@ const ProductPage = () => {
                   </Card>
                 </SwiperSlide>
                 <SwiperSlide>
-                  <Card shadow='sm' className='h-[86px] w-[86px]'>
+                  <Card shadow='sm' className='h-[80px] w-[80px]'>
                     <Image
                       removeWrapper
                       src='https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1999&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
@@ -276,7 +276,7 @@ const ProductPage = () => {
                   </Card>
                 </SwiperSlide>
                 <SwiperSlide>
-                  <Card shadow='sm' className='h-[86px] w-[86px]'>
+                  <Card shadow='sm' className='h-[80px] w-[80px]'>
                     <Image
                       removeWrapper
                       src='https://images.unsplash.com/photo-1522337660859-02fbefca4702?q=80&w=1933&auto=format&fit=crop&ixlib=rb-4.0.3'
@@ -290,11 +290,14 @@ const ProductPage = () => {
             </div>
 
             {/* Right Section */}
-            <div className='w-2/3 pl-4 h-[680px]'>
+            <div className='w-2/3 pl-4 max-h-[680px]'>
               <Card shadow='md' className='h-full'>
                 <Image
                   removeWrapper
-                  src={selectedProduct?.imageUrl}
+                  src={
+                    selectedProduct?.imageUrl ||
+                    'https://i.pinimg.com/736x/1e/6e/e4/1e6ee4f9bdbcdadb0f1d870367486732.jpg'
+                  }
                   alt='Main Product'
                   className='rounded-lg'
                 />
@@ -318,7 +321,7 @@ const ProductPage = () => {
           >
             {cardData.map((card) => (
               <div key={card.id}>
-                <Card className='shadow-md overflow-hidden'>
+                <Card className='hover:shadow-md overflow-hidden'>
                   <CardHeader className='absolute z-10 top-2 left-2 flex-col items-start'>
                     <span className='text-tiny text-white/60 uppercase font-bold'>
                       {card.headerSubtitle}
@@ -357,7 +360,7 @@ const ProductPage = () => {
         </div>
       </div>
       {/* Right Section: Product Info */}
-      <div className='flex-[0.35] h-full sticky top-8'>
+      <div className='flex-[0.35] h-full top-8'>
         <Card
           shadow='md'
           className='bg-[#E7E5E4] rounded-md p-6 w-full max-w-lg mx-auto'
@@ -423,14 +426,7 @@ const ProductPage = () => {
 
             {/* Product Description */}
             <div className='mt-6 text-gray-600 text-sm'>
-              <p className='mb-4'>
-                Youthful skin is just a few suds away, suitable for normal to
-                dry skin types. Our Gentle Cleanser combines the power of
-                Japanese Yuzu Extract and Grape Leaf Extract to help promote
-                anti-aging and brighten complexion. It is perfect to also
-                effectively help cleanse impurities built-up on skin such as
-                makeup, dirt, while leaving you with supple, baby-soft skin.
-              </p>
+              <p className='mb-4'>{selectedProduct?.description}</p>
               <ul className='list-disc pl-5 space-y-0'>
                 <li>Brightening Complexion & Anti-Aging.</li>
                 <li>Gentle Cleansing.</li>
@@ -443,7 +439,7 @@ const ProductPage = () => {
       {currentStep > 0 && (
         <div>
           <div
-            className='fixed inset-0 bg-black bg-opacity-50 z-40'
+            className='fixed inset-0 bg-black bg-opacity-50 z-10'
             onClick={() => setCurrentStep(0)}
           ></div>
           <div className='fixed inset-0 z-50 flex justify-center items-center'>
