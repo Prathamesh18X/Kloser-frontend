@@ -442,6 +442,7 @@ const ProductPage = () => {
               size='md'
               radius='none'
               icon={<AddShoppingCartRoundedIcon />}
+              onClick={() => setCurrentStep(currentStep + 1)}
             >
               ADD TO CART
             </Button>
@@ -465,7 +466,10 @@ const ProductPage = () => {
       </div>
       {currentStep > 0 && (
         <div>
-          <div className='fixed inset-0 bg-black bg-opacity-50 z-40'></div>
+          <div
+            className='fixed inset-0 bg-black bg-opacity-50 z-40'
+            onClick={() => setCurrentStep(0)}
+          ></div>
           <div className='fixed inset-0 z-50 flex justify-center items-center'>
             {currentStep === 1 && (
               <ShoppingSummary
