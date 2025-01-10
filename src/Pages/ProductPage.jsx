@@ -416,7 +416,7 @@ const ProductPage = () => {
             {/* Add to Cart Button */}
             <button
               className='bg-black text-white text-sm font-semibold py-2 px-4 w-[40%] hover:bg-gray-800'
-              // onClick={handleAddToCart}
+              onClick={() => setCurrentStep(currentStep + 1)}
             >
               ADD TO CART
             </button>
