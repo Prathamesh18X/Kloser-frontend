@@ -10,7 +10,7 @@ const DeliverySelection = ({
   onAddNewAddress,
 }) => {
   return (
-    <div className='w-[480px] h-[calc(100vh-78.5px)] bg-default fixed top-[78.5px] right-0 z-50 overflow-y-auto0 flex flex-col'>
+    <div className='w-[480px] h-[calc(100vh-78.5px)] bg-default fixed top-[78.5px] right-0 z-50 overflow-y-auto0 flex flex-col scrollbar-none custom-scrollbar'>
       <div className='flex justify-between items-center px-6 py-4'>
         <button className='text-gray-600 text-xl'>
           <svg

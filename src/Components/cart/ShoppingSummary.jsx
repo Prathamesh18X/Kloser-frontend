@@ -162,7 +162,7 @@ const YouMightLikeItem = ({ item }) => {
 
 const ShoppingSummary = ({ items, total, onCheckout, allitems }) => {
   return (
-    <div className='w-[480px] h-[calc(100vh-78.5px)] bg-default fixed top-[78.5px] right-0 z-50 overflow-y-auto'>
+    <div className='w-[480px] h-[calc(100vh-78.5px)] bg-default fixed top-[78.5px] right-0 z-50 overflow-y-auto scrollbar-none custom-scrollbar'>
       <div className='p-7 border-gray-200'>
         <h2 className='text-left text-[#78716C] font-inter font-medium text-[16px] leading-[22.4px] md:text-[18px] md:leading-[25.2px]'>
           Shopping summary
